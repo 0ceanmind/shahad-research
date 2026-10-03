@@ -9,3 +9,5 @@ build/qa/png*_sheet-*.jpg
 build/qa/tmp/
 build/qa/__pycache__/
 build/qa/report_*.png
+build/qa/check_*.jpg
+build/qa/crop*.png
