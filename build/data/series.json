@@ -1,0 +1,560 @@
+{
+ "production_kbd": {
+  "1946": 16,
+  "1950": 344,
+  "1955": 1096,
+  "1965": 2375,
+  "1966": 2505,
+  "1967": 2522,
+  "1968": 2656,
+  "1969": 2811,
+  "1970": 3029,
+  "1971": 3243,
+  "1972": 3339,
+  "1973": 3074,
+  "1974": 2599,
+  "1975": 2132,
+  "1976": 2207,
+  "1977": 2028,
+  "1978": 2193,
+  "1979": 2618,
+  "1980": 1757,
+  "1981": 1187,
+  "1982": 865,
+  "1983": 1115,
+  "1984": 1232,
+  "1985": 1127,
+  "1986": 1210,
+  "1987": 1065,
+  "1988": 1291,
+  "1989": 1405,
+  "1990": 964,
+  "1991": 185,
+  "1992": 1077,
+  "1993": 1939,
+  "1994": 2087,
+  "1995": 2130,
+  "1996": 2137,
+  "1997": 2139,
+  "1998": 2241,
+  "1999": 2092,
+  "2000": 2244,
+  "2001": 2176,
+  "2002": 2019,
+  "2003": 2364,
+  "2004": 2522,
+  "2005": 2669,
+  "2006": 2746,
+  "2007": 2677,
+  "2008": 2813,
+  "2009": 2507,
+  "2010": 2564,
+  "2011": 2924,
+  "2012": 3191,
+  "2013": 3135,
+  "2014": 3106,
+  "2015": 3069,
+  "2016": 3150,
+  "2017": 3009,
+  "2018": 3050,
+  "2019": 2976,
+  "2020": 2721,
+  "2021": 2707,
+  "2022": 3023,
+  "2023": 2910,
+  "2024": 2728
+ },
+ "production_estimated": [
+  1965,
+  1966,
+  1967,
+  1968,
+  1969,
+  1970,
+  1971,
+  1973,
+  1974,
+  1976,
+  1977,
+  1978,
+  1979,
+  1981,
+  1982,
+  1983,
+  1984,
+  1986,
+  1987,
+  1988,
+  1989,
+  1993,
+  1994,
+  1996,
+  1997,
+  1998,
+  1999,
+  2001,
+  2002,
+  2003,
+  2004,
+  2006,
+  2007,
+  2008,
+  2009,
+  2011,
+  2012,
+  2013,
+  2024
+ ],
+ "crude_kbd": {
+  "2005": 2573,
+  "2010": 2312,
+  "2015": 2859,
+  "2016": 2954,
+  "2018": 2737,
+  "2019": 2678,
+  "2020": 2437,
+  "2021": 2415,
+  "2022": 2707,
+  "2023": 2591,
+  "2024": 2419
+ },
+ "gas": {
+  "1965": {
+   "prod_twh": 21.606,
+   "cons_twh": 17.261,
+   "prod_bcm": 2.2,
+   "cons_bcm": 1.7,
+   "import_bcm": 0.0
+  },
+  "1966": {
+   "prod_twh": 20.666,
+   "cons_twh": 22.61,
+   "prod_bcm": 2.1,
+   "cons_bcm": 2.3,
+   "import_bcm": 0.2
+  },
+  "1967": {
+   "prod_twh": 32.613,
+   "cons_twh": 25.726,
+   "prod_bcm": 3.3,
+   "cons_bcm": 2.6,
+   "import_bcm": 0.0
+  },
+  "1968": {
+   "prod_twh": 40.212,
+   "cons_twh": 31.72,
+   "prod_bcm": 4.0,
+   "cons_bcm": 3.2,
+   "import_bcm": 0.0
+  },
+  "1969": {
+   "prod_twh": 44.885,
+   "cons_twh": 35.407,
+   "prod_bcm": 4.5,
+   "cons_bcm": 3.5,
+   "import_bcm": 0.0
+  },
+  "1970": {
+   "prod_twh": 19.352,
+   "cons_twh": 19.352,
+   "prod_bcm": 1.9,
+   "cons_bcm": 1.9,
+   "import_bcm": 0.0
+  },
+  "1971": {
+   "prod_twh": 19.988,
+   "cons_twh": 19.988,
+   "prod_bcm": 2.0,
+   "cons_bcm": 2.0,
+   "import_bcm": 0.0
+  },
+  "1972": {
+   "prod_twh": 23.627,
+   "cons_twh": 23.627,
+   "prod_bcm": 2.4,
+   "cons_bcm": 2.4,
+   "import_bcm": 0.0
+  },
+  "1973": {
+   "prod_twh": 26.467,
+   "cons_twh": 26.467,
+   "prod_bcm": 2.6,
+   "cons_bcm": 2.6,
+   "import_bcm": 0.0
+  },
+  "1974": {
+   "prod_twh": 27.844,
+   "cons_twh": 27.844,
+   "prod_bcm": 2.8,
+   "cons_bcm": 2.8,
+   "import_bcm": 0.0
+  },
+  "1975": {
+   "prod_twh": 30.514,
+   "cons_twh": 30.514,
+   "prod_bcm": 3.1,
+   "cons_bcm": 3.1,
+   "import_bcm": 0.0
+  },
+  "1976": {
+   "prod_twh": 36.708,
+   "cons_twh": 36.708,
+   "prod_bcm": 3.7,
+   "cons_bcm": 3.7,
+   "import_bcm": 0.0
+  },
+  "1977": {
+   "prod_twh": 40.024,
+   "cons_twh": 40.024,
+   "prod_bcm": 4.0,
+   "cons_bcm": 4.0,
+   "import_bcm": 0.0
+  },
+  "1978": {
+   "prod_twh": 44.849,
+   "cons_twh": 44.849,
+   "prod_bcm": 4.5,
+   "cons_bcm": 4.5,
+   "import_bcm": 0.0
+  },
+  "1979": {
+   "prod_twh": 59.385,
+   "cons_twh": 59.385,
+   "prod_bcm": 5.9,
+   "cons_bcm": 5.9,
+   "import_bcm": 0.0
+  },
+  "1980": {
+   "prod_twh": 38.674,
+   "cons_twh": 38.674,
+   "prod_bcm": 3.9,
+   "cons_bcm": 3.9,
+   "import_bcm": 0.0
+  },
+  "1981": {
+   "prod_twh": 44.498,
+   "cons_twh": 44.498,
+   "prod_bcm": 4.4,
+   "cons_bcm": 4.4,
+   "import_bcm": 0.0
+  },
+  "1982": {
+   "prod_twh": 34.913,
+   "cons_twh": 34.913,
+   "prod_bcm": 3.5,
+   "cons_bcm": 3.5,
+   "import_bcm": 0.0
+  },
+  "1983": {
+   "prod_twh": 38.333,
+   "cons_twh": 38.333,
+   "prod_bcm": 3.8,
+   "cons_bcm": 3.8,
+   "import_bcm": 0.0
+  },
+  "1984": {
+   "prod_twh": 41.572,
+   "cons_twh": 41.572,
+   "prod_bcm": 4.2,
+   "cons_bcm": 4.2,
+   "import_bcm": 0.0
+  },
+  "1985": {
+   "prod_twh": 39.9,
+   "cons_twh": 39.9,
+   "prod_bcm": 4.0,
+   "cons_bcm": 4.0,
+   "import_bcm": 0.0
+  },
+  "1986": {
+   "prod_twh": 54.435,
+   "cons_twh": 54.435,
+   "prod_bcm": 5.4,
+   "cons_bcm": 5.4,
+   "import_bcm": 0.0
+  },
+  "1987": {
+   "prod_twh": 45.41,
+   "cons_twh": 45.41,
+   "prod_bcm": 4.5,
+   "cons_bcm": 4.5,
+   "import_bcm": 0.0
+  },
+  "1988": {
+   "prod_twh": 64.98,
+   "cons_twh": 64.98,
+   "prod_bcm": 6.5,
+   "cons_bcm": 6.5,
+   "import_bcm": 0.0
+  },
+  "1989": {
+   "prod_twh": 77.52,
+   "cons_twh": 77.52,
+   "prod_bcm": 7.8,
+   "cons_bcm": 7.8,
+   "import_bcm": 0.0
+  },
+  "1990": {
+   "prod_twh": 39.805,
+   "cons_twh": 39.805,
+   "prod_bcm": 4.0,
+   "cons_bcm": 4.0,
+   "import_bcm": 0.0
+  },
+  "1991": {
+   "prod_twh": 4.75,
+   "cons_twh": 4.75,
+   "prod_bcm": 0.5,
+   "cons_bcm": 0.5,
+   "import_bcm": 0.0
+  },
+  "1992": {
+   "prod_twh": 24.89,
+   "cons_twh": 24.89,
+   "prod_bcm": 2.5,
+   "cons_bcm": 2.5,
+   "import_bcm": 0.0
+  },
+  "1993": {
+   "prod_twh": 51.49,
+   "cons_twh": 51.49,
+   "prod_bcm": 5.1,
+   "cons_bcm": 5.1,
+   "import_bcm": 0.0
+  },
+  "1994": {
+   "prod_twh": 56.715,
+   "cons_twh": 56.715,
+   "prod_bcm": 5.7,
+   "cons_bcm": 5.7,
+   "import_bcm": 0.0
+  },
+  "1995": {
+   "prod_twh": 88.141,
+   "cons_twh": 88.141,
+   "prod_bcm": 8.8,
+   "cons_bcm": 8.8,
+   "import_bcm": 0.0
+  },
+  "1996": {
+   "prod_twh": 88.369,
+   "cons_twh": 88.369,
+   "prod_bcm": 8.8,
+   "cons_bcm": 8.8,
+   "import_bcm": 0.0
+  },
+  "1997": {
+   "prod_twh": 88.065,
+   "cons_twh": 88.065,
+   "prod_bcm": 8.8,
+   "cons_bcm": 8.8,
+   "import_bcm": 0.0
+  },
+  "1998": {
+   "prod_twh": 90.164,
+   "cons_twh": 90.164,
+   "prod_bcm": 9.0,
+   "cons_bcm": 9.0,
+   "import_bcm": 0.0
+  },
+  "1999": {
+   "prod_twh": 82.536,
+   "cons_twh": 82.536,
+   "prod_bcm": 8.3,
+   "cons_bcm": 8.3,
+   "import_bcm": 0.0
+  },
+  "2000": {
+   "prod_twh": 91.2,
+   "cons_twh": 91.2,
+   "prod_bcm": 9.1,
+   "cons_bcm": 9.1,
+   "import_bcm": 0.0
+  },
+  "2001": {
+   "prod_twh": 90.25,
+   "cons_twh": 90.25,
+   "prod_bcm": 9.0,
+   "cons_bcm": 9.0,
+   "import_bcm": 0.0
+  },
+  "2002": {
+   "prod_twh": 82.745,
+   "cons_twh": 82.745,
+   "prod_bcm": 8.3,
+   "cons_bcm": 8.3,
+   "import_bcm": 0.0
+  },
+  "2003": {
+   "prod_twh": 95.0,
+   "cons_twh": 95.0,
+   "prod_bcm": 9.5,
+   "cons_bcm": 9.5,
+   "import_bcm": 0.0
+  },
+  "2004": {
+   "prod_twh": 103.55,
+   "cons_twh": 103.55,
+   "prod_bcm": 10.4,
+   "cons_bcm": 10.4,
+   "import_bcm": 0.0
+  },
+  "2005": {
+   "prod_twh": 116.85,
+   "cons_twh": 116.85,
+   "prod_bcm": 11.7,
+   "cons_bcm": 11.7,
+   "import_bcm": 0.0
+  },
+  "2006": {
+   "prod_twh": 117.895,
+   "cons_twh": 117.895,
+   "prod_bcm": 11.8,
+   "cons_bcm": 11.8,
+   "import_bcm": 0.0
+  },
+  "2007": {
+   "prod_twh": 106.97,
+   "cons_twh": 106.97,
+   "prod_bcm": 10.7,
+   "cons_bcm": 10.7,
+   "import_bcm": 0.0
+  },
+  "2008": {
+   "prod_twh": 120.65,
+   "cons_twh": 120.65,
+   "prod_bcm": 12.1,
+   "cons_bcm": 12.1,
+   "import_bcm": 0.0
+  },
+  "2009": {
+   "prod_twh": 109.146,
+   "cons_twh": 118.461,
+   "prod_bcm": 10.9,
+   "cons_bcm": 11.8,
+   "import_bcm": 0.9
+  },
+  "2010": {
+   "prod_twh": 111.464,
+   "cons_twh": 139.755,
+   "prod_bcm": 11.1,
+   "cons_bcm": 14.0,
+   "import_bcm": 2.8
+  },
+  "2011": {
+   "prod_twh": 128.564,
+   "cons_twh": 158.579,
+   "prod_bcm": 12.9,
+   "cons_bcm": 15.9,
+   "import_bcm": 3.0
+  },
+  "2012": {
+   "prod_twh": 147.393,
+   "cons_twh": 175.318,
+   "prod_bcm": 14.7,
+   "cons_bcm": 17.5,
+   "import_bcm": 2.8
+  },
+  "2013": {
+   "prod_twh": 154.956,
+   "cons_twh": 177.704,
+   "prod_bcm": 15.5,
+   "cons_bcm": 17.8,
+   "import_bcm": 2.3
+  },
+  "2014": {
+   "prod_twh": 142.773,
+   "cons_twh": 178.711,
+   "prod_bcm": 14.3,
+   "cons_bcm": 17.9,
+   "import_bcm": 3.6
+  },
+  "2015": {
+   "prod_twh": 160.635,
+   "cons_twh": 203.227,
+   "prod_bcm": 16.1,
+   "cons_bcm": 20.3,
+   "import_bcm": 4.3
+  },
+  "2016": {
+   "prod_twh": 164.265,
+   "cons_twh": 211.499,
+   "prod_bcm": 16.4,
+   "cons_bcm": 21.1,
+   "import_bcm": 4.7
+  },
+  "2017": {
+   "prod_twh": 162.466,
+   "cons_twh": 210.275,
+   "prod_bcm": 16.2,
+   "cons_bcm": 21.0,
+   "import_bcm": 4.8
+  },
+  "2018": {
+   "prod_twh": 168.509,
+   "cons_twh": 211.522,
+   "prod_bcm": 16.9,
+   "cons_bcm": 21.2,
+   "import_bcm": 4.3
+  },
+  "2019": {
+   "prod_twh": 132.544,
+   "cons_twh": 183.732,
+   "prod_bcm": 13.3,
+   "cons_bcm": 18.4,
+   "import_bcm": 5.1
+  },
+  "2020": {
+   "prod_twh": 122.389,
+   "cons_twh": 179.136,
+   "prod_bcm": 12.2,
+   "cons_bcm": 17.9,
+   "import_bcm": 5.7
+  },
+  "2021": {
+   "prod_twh": 120.916,
+   "cons_twh": 197.584,
+   "prod_bcm": 12.1,
+   "cons_bcm": 19.8,
+   "import_bcm": 7.7
+  },
+  "2022": {
+   "prod_twh": 131.889,
+   "cons_twh": 216.601,
+   "prod_bcm": 13.2,
+   "cons_bcm": 21.7,
+   "import_bcm": 8.5
+  },
+  "2023": {
+   "prod_twh": 147.695,
+   "cons_twh": 236.954,
+   "prod_bcm": 14.8,
+   "cons_bcm": 23.7,
+   "import_bcm": 8.9
+  },
+  "2024": {
+   "prod_twh": 149.182,
+   "cons_twh": 246.45,
+   "prod_bcm": 14.9,
+   "cons_bcm": 24.6,
+   "import_bcm": 9.7
+  }
+ },
+ "power": {
+  "2000": {
+   "gen_twh": 32.33,
+   "oil_share": 67.058,
+   "gas_share": 32.942
+  },
+  "2010": {
+   "gen_twh": 57.03,
+   "oil_share": 65.369,
+   "gas_share": 34.631
+  },
+  "2024": {
+   "gen_twh": 92.49,
+   "oil_share": 35.68,
+   "gas_share": 62.082
+  }
+ }
+}

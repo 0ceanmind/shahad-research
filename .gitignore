@@ -1,0 +1,6 @@
+build/node_modules/
+build/out/
+*.pdf
+slide-*.jpg
+page-*.jpg
+__pycache__/
