@@ -140,7 +140,7 @@ def("timeline", "Content", (s) => {
     ["1934", "Oil concession\nsigned with KOC"], ["1938", "Oil strikes at\nBurgan No. 1"],
     ["1946", "First crude\nexport"], ["1960", "Co-founds OPEC;\nKNPC formed"],
     ["1975", "KOC fully\nnationalised"], ["1980", "KPC created"],
-    ["1991", "Well fires after\nthe 1990 invasion"], ["2018", "Jurassic super-light\ncrude and gas"],
+    ["1991", "Well fires after\nthe 1990 invasion"], ["2018", "Jurassic facilities;\nSuper Light exports"],
     ["2024", "Al-Zour refinery\nat full 615 kb/d"],
   ];
   const x0 = 1.35, x1 = W - 1.35, yL = 4.05, step = (x1 - x0) / (items.length - 1), WD = 2400, T0 = 250;
@@ -262,7 +262,7 @@ def("gastypes", "Content", (s) => {
   m.scale(c1, 1100, 900, 0.85); m.fade(c2, 1250, 600); m.fade(c3, 1250, 600);
   const rows = [
     ["TbDroplet", HEX.oil, "Associated gas", "Released with crude oil, so its output follows oil quotas"],
-    ["TbFlame", HEX.gas, "Non-associated Jurassic gas", "Deep, high-pressure sour gas in North Kuwait, since 2018"],
+    ["TbFlame", HEX.gas, "Non-associated Jurassic gas", "Deep, high-pressure sour gas in North Kuwait"],
     ["TbShip", HEX.text, "Imported LNG", "Imported since 2009; about 40% of the gas used in 2024"],
   ];
   rows.forEach(([ico, col, h, d], i) => {
@@ -294,7 +294,7 @@ def("reserves", "Content", (s) => {
   const a = text(s, "101.5", { x: MX, y: 2.0, w: 6.6, h: 1.75, fontSize: 130, bold: true, color: C.accent1 });
   const b = text(s, "billion barrels of proven crude oil", { x: MX, y: 3.95, w: 6.4, h: 0.5, fontSize: 26, bold: true });
   const c = text(s, "Unchanged in official statistics since about 2010: additions have offset about one billion barrels produced each year.",
-    { x: MX, y: 4.55, w: 6.0, h: 0.85, fontSize: 17, color: C.text2 });
+    { x: MX, y: 4.55, w: 6.4, h: 0.85, fontSize: 17, color: C.text2 });
   const d = text(s, [{ text: "≈100 years ", options: { bold: true, color: C.text1 } }, { text: "of output left at today's rate", options: { color: C.text2 } }],
     { x: MX, y: 5.55, w: 6.0, h: 0.45, fontSize: 17 });
   m.scale(a, 250, 1300, 0.88); m.rise(b, 650); m.rise(c, 850); m.rise(d, 1050);
