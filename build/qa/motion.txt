@@ -1,0 +1,715 @@
+
+=== 1  title         Kuwait  | transition=fade dur=1000 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+       0ms + 1800  scale    !!drop                 [pic] '' {'s0': 0.86}
+     450ms +  900  fade     ti_kick                [sp] 'EGCH2230  ·  PETROLEUM AND PETROCHEMICAL' 
+     600ms + 1100  rise     !!title                [sp] 'Kuwait' {'dy': 0.03}
+     850ms + 1000  rise     ti_sub                 [sp] 'A Century of Oil &amp; Gas' {'dy': 0.025}
+    1150ms +  900  fade     ti_tag                 [sp] 'History  ·  Resources  ·  Reservoirs  · ' 
+    1400ms +  900  rise     ti_name                [sp] 'Shahad Issa Obaid AlghriabiUniversity of' {'dy': 0.025}
+    1800ms + 3800  drift    !!drop                 [pic] '' {'dx': 0, 'dy': -0.014}
+  objects without animation: !!badge
+
+=== 2  contents      The story in five chapters  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     300ms +  900  scale    contents_s_1           [sp] '' {'s0': 0.95}
+     360ms +  900  scale    contents_s_2           [sp] '' {'s0': 0.8}
+     360ms +  900  scale    contents_i_3           [pic] '' {'s0': 0.8}
+     420ms +  800  rise     contents_t_4           [sp] '01' {'dy': 0.025}
+     420ms +  900  scale    contents_s_9           [sp] '' {'s0': 0.95}
+     480ms +  800  rise     contents_t_5           [sp] 'History&amp; Types' {'dy': 0.025}
+     480ms +  900  scale    contents_s_10          [sp] '' {'s0': 0.8}
+     480ms +  900  scale    contents_i_11          [pic] '' {'s0': 0.8}
+     540ms +  800  rise     contents_t_12          [sp] '02' {'dy': 0.025}
+     540ms +  900  scale    contents_s_17          [sp] '' {'s0': 0.95}
+     560ms +  800  fade     contents_t_6           [sp] '1934 to today' 
+     600ms +  800  glide    contents_i_7           [pic] '' {'dx': -0.012, 'dy': 0}
+     600ms +  800  rise     contents_t_13          [sp] 'Resources&amp; Growth' {'dy': 0.025}
+     600ms +  900  scale    contents_s_18          [sp] '' {'s0': 0.8}
+     600ms +  900  scale    contents_i_19          [pic] '' {'s0': 0.8}
+     660ms +  800  rise     contents_t_20          [sp] '03' {'dy': 0.025}
+     660ms +  900  scale    contents_s_25          [sp] '' {'s0': 0.95}
+     680ms +  800  fade     contents_t_14          [sp] 'Reserves &amp; output' 
+     720ms +  800  glide    contents_i_15          [pic] '' {'dx': -0.012, 'dy': 0}
+     720ms +  800  rise     contents_t_21          [sp] 'ReservoirLocations' {'dy': 0.025}
+     720ms +  900  scale    contents_s_26          [sp] '' {'s0': 0.8}
+     720ms +  900  scale    contents_i_27          [pic] '' {'s0': 0.8}
+     780ms +  800  rise     contents_t_28          [sp] '04' {'dy': 0.025}
+     780ms +  900  scale    contents_s_33          [sp] '' {'s0': 0.95}
+     800ms +  800  fade     contents_t_22          [sp] 'Fields &amp; rocks' 
+     840ms +  800  glide    contents_i_23          [pic] '' {'dx': -0.012, 'dy': 0}
+     840ms +  800  rise     contents_t_29          [sp] 'Exports&amp; Costs' {'dy': 0.025}
+     840ms +  900  scale    contents_s_34          [sp] '' {'s0': 0.8}
+     840ms +  900  scale    contents_i_35          [pic] '' {'s0': 0.8}
+     900ms +  800  rise     contents_t_36          [sp] '05' {'dy': 0.025}
+     920ms +  800  fade     contents_t_30          [sp] 'Markets &amp; prices' 
+     960ms +  800  glide    contents_i_31          [pic] '' {'dx': -0.012, 'dy': 0}
+     960ms +  800  rise     contents_t_37          [sp] 'Conclusion&amp; Sources' {'dy': 0.025}
+    1040ms +  800  fade     contents_t_38          [sp] 'Findings &amp; sources' 
+    1080ms +  800  glide    contents_i_39          [pic] '' {'dx': -0.012, 'dy': 0}
+    1300ms +  900  fade     contents_t_41          [sp] 'Click a chapter to jump to it. The grid ' 
+  objects without animation: !!kicker, !!title, contents_s_8, contents_s_16, contents_s_24, contents_s_32, contents_s_40, !!footer, !!num, !!badge
+
+=== 3  glance        A small country with a giant reservoir  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     300ms +  700  fade     glance_i_1             [pic] '' 
+     380ms + 1100  scale    glance_t_2             [sp] '101.5' {'s0': 0.9}
+     460ms +  700  fade     glance_i_5             [pic] '' 
+     520ms +  800  rise     glance_t_3             [sp] 'billion barrels' {'dy': 0.025}
+     540ms + 1100  scale    glance_t_6             [sp] '2.4' {'s0': 0.9}
+     620ms +  800  rise     glance_t_4             [sp] 'proven crude oil reserves, about 6.5% of' {'dy': 0.025}
+     620ms +  700  fade     glance_i_9             [pic] '' 
+     680ms +  800  rise     glance_t_7             [sp] 'million b/d' {'dy': 0.025}
+     700ms + 1100  scale    glance_t_10            [sp] '1.4' {'s0': 0.9}
+     780ms +  800  rise     glance_t_8             [sp] 'crude oil produced in 2024, under OPEC+ ' {'dy': 0.025}
+     780ms +  700  fade     glance_i_13            [pic] '' 
+     840ms +  800  rise     glance_t_11            [sp] 'million b/d' {'dy': 0.025}
+     860ms + 1100  scale    glance_t_14            [sp] '90%+' {'s0': 0.9}
+     940ms +  800  rise     glance_t_12            [sp] 'domestic refining capacity since Al-Zour' {'dy': 0.025}
+    1000ms +  800  rise     glance_t_15            [sp] 'of exports' {'dy': 0.025}
+    1100ms +  800  rise     glance_t_16            [sp] 'are fuels, and oil funds most of the sta' {'dy': 0.025}
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 4  sec1          History &amp; Types  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+       0ms + 1600  scale    !!drop                 [pic] '' {'s0': 0.88}
+     700ms +  900  rise     sec1_t_1               [sp] 'From a pearling port to a petroleum stat' {'dy': 0.025}
+     900ms +  600  fade     sec1_s_2               [sp] '' 
+     980ms +  600  fade     sec1_s_3               [sp] '' 
+    1060ms +  600  fade     sec1_s_4               [sp] '' 
+    1140ms +  600  fade     sec1_s_5               [sp] '' 
+    1220ms +  600  fade     sec1_s_6               [sp] '' 
+    1600ms + 3800  drift    !!drop                 [pic] '' {'dx': 0, 'dy': -0.016}
+  objects without animation: !!kicker, !!title, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 5  timeline      Ninety years in nine moments  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms + 2400  wipeL    timeline_s_1           [sp] '' 
+     400ms + 2400  wipeL    timeline_s_2           [sp] '' 
+     432ms +  600  land     timeline_s_3           [sp] '' {'s0': 1.9}
+     492ms +  700  drop     timeline_t_5           [sp] '1934' {'dy': 0.015}
+     512ms +  500  fade     timeline_s_4           [sp] '' 
+     581ms +  600  land     timeline_s_7           [sp] '' {'s0': 1.9}
+     592ms +  700  fade     timeline_t_6           [sp] 'Oil concessionsigned with KOC' 
+     641ms +  700  rise     timeline_t_9           [sp] '1938' {'dy': 0.015}
+     661ms +  500  fade     timeline_s_8           [sp] '' 
+     740ms +  600  land     timeline_s_11          [sp] '' {'s0': 1.9}
+     741ms +  700  fade     timeline_t_10          [sp] 'Oil strikes atBurgan No. 1' 
+     800ms +  700  drop     timeline_t_13          [sp] '1946' {'dy': 0.015}
+     820ms +  500  fade     timeline_s_12          [sp] '' 
+     900ms +  700  fade     timeline_t_14          [sp] 'First crudeexport' 
+     913ms +  600  land     timeline_s_15          [sp] '' {'s0': 1.9}
+     973ms +  700  rise     timeline_t_17          [sp] '1960' {'dy': 0.015}
+     993ms +  500  fade     timeline_s_16          [sp] '' 
+    1073ms +  700  fade     timeline_t_18          [sp] 'Co-founds OPEC;KNPC formed' 
+    1103ms +  600  land     timeline_s_19          [sp] '' {'s0': 1.9}
+    1163ms +  700  drop     timeline_t_21          [sp] '1975' {'dy': 0.015}
+    1183ms +  500  fade     timeline_s_20          [sp] '' 
+    1263ms +  700  fade     timeline_t_22          [sp] 'KOC fullynationalised' 
+    1317ms +  600  land     timeline_s_23          [sp] '' {'s0': 1.9}
+    1377ms +  700  rise     timeline_t_25          [sp] '1980' {'dy': 0.015}
+    1397ms +  500  fade     timeline_s_24          [sp] '' 
+    1477ms +  700  fade     timeline_t_26          [sp] 'KPC created' 
+    1568ms +  600  land     timeline_s_27          [sp] '' {'s0': 1.9}
+    1628ms +  700  drop     !!y1991                [sp] '1991' {'dy': 0.015}
+    1648ms +  500  fade     timeline_s_28          [sp] '' 
+    1728ms +  700  fade     timeline_t_29          [sp] 'Well fires afterthe 1990 invasion' 
+    1886ms +  600  land     timeline_s_30          [sp] '' {'s0': 1.9}
+    1946ms +  700  rise     timeline_t_32          [sp] '2018' {'dy': 0.015}
+    1966ms +  500  fade     timeline_s_31          [sp] '' 
+    2046ms +  700  fade     timeline_t_33          [sp] 'Jurassic super-lightcrude and gas' 
+    2408ms +  600  land     timeline_s_34          [sp] '' {'s0': 1.9}
+    2468ms + 1700  breathe  timeline_s_27          [sp] '' {'s': 1.15}
+    2468ms +  700  drop     timeline_t_36          [sp] '2024' {'dy': 0.015}
+    2488ms +  500  fade     timeline_s_35          [sp] '' 
+    2568ms +  700  fade     timeline_t_37          [sp] 'Al-Zour refinery atfull 615 kb/d' 
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 6  fires         When the desert burned  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms + 2600  breathe  !!orbA                 [pic] '' {'s': 1.12}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     300ms + 1400  scale    fires_t_1              [sp] '700+' {'s0': 0.88}
+     750ms +  900  rise     fires_t_2              [sp] 'oil wells set ablaze by retreating Iraqi' {'dy': 0.025}
+    1000ms +  900  rise     fires_t_3              [sp] '&gt;\xa01 billion' {'dy': 0.025}
+    1150ms +  800  fade     fires_t_4              [sp] 'barrels of crude oil lost' 
+    1220ms +  900  rise     fires_t_5              [sp] '4–6 million b/d' {'dy': 0.025}
+    1370ms +  800  fade     fires_t_6              [sp] 'of oil burning at the peak' 
+    1440ms +  900  rise     fires_t_7              [sp] '6 November 1991' {'dy': 0.025}
+    1590ms +  800  fade     fires_t_8              [sp] 'last fire capped: Burgan well 118' 
+    1900ms +  900  fade     fires_t_9              [sp] 'Recovery: 27 international teams and Kuw' 
+  objects without animation: !!y1991, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 7  crudes        Four crudes on one scale  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms + 1500  wipeL    crudes_i_1             [pic] '' 
+     800ms +  700  fade     crudes_t_2             [sp] 'HEAVY' 
+     800ms +  600  fade     crudes_s_5             [sp] '' 
+     800ms +  600  fade     crudes_s_6             [sp] '' 
+     900ms +  600  fade     crudes_t_7             [sp] '10°' 
+     900ms +  600  fade     crudes_t_8             [sp] '20°' 
+     900ms +  600  fade     crudes_t_9             [sp] '30°' 
+     900ms +  600  fade     crudes_t_10            [sp] '40°' 
+     900ms +  600  fade     crudes_t_11            [sp] '50°' 
+     900ms + 1100  glide    crudes_s_12            [sp] '' {'dx': -0.12862446561164032, 'dy': 0}
+     920ms +  700  fade     crudes_t_3             [sp] 'MEDIUM' 
+    1040ms +  700  fade     crudes_t_4             [sp] 'LIGHT' 
+    1080ms + 1100  glide    crudes_s_15            [sp] '' {'dx': -0.39659210230255765, 'dy': 0}
+    1260ms + 1100  glide    crudes_s_18            [sp] '' {'dx': -0.43946692417310435, 'dy': 0}
+    1440ms + 1100  glide    crudes_s_21            [sp] '' {'dx': -0.8146216155403886, 'dy': 0}
+    1750ms +  500  fade     crudes_s_13            [sp] '' 
+    1750ms +  800  drop     crudes_t_14            [sp] 'Kuwait Export Heavy16° API  ·  4.93% SHe' {'dy': 0.02}
+    1930ms +  500  fade     crudes_s_16            [sp] '' 
+    1930ms +  800  rise     crudes_t_17            [sp] 'Khafji28.5° API  ·  2.85% SPartitioned Z' {'dy': 0.02}
+    2110ms +  500  fade     crudes_s_19            [sp] '' 
+    2110ms +  800  drop     crudes_t_20            [sp] 'Kuwait Export Crude30.5° API  ·  2.50% S' {'dy': 0.02}
+    2290ms +  500  fade     crudes_s_22            [sp] '' 
+    2290ms +  800  drop     crudes_t_23            [sp] 'Kuwait Super Light48° API  ·  0.38% SJur' {'dy': 0.02}
+    2900ms +  700  fade     crudes_t_24            [sp] 'API gravity = 141.5 / SG − 131.5   ·   h' 
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 8  gastypes      Gas: mostly a by-product of oil  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     300ms + 1600  wheel    gastypes_donut         [graphicFrame] '' 
+    1100ms +  900  scale    gastypes_t_1           [sp] '70%' {'s0': 0.85}
+    1250ms +  600  fade     gastypes_t_2           [sp] 'associated gas, 2021' 
+    1450ms +  800  scale    gastypes_s_3           [sp] '' {'s0': 0.8}
+    1450ms +  800  scale    gastypes_i_4           [pic] '' {'s0': 0.8}
+    1530ms +  800  rise     gastypes_t_5           [sp] 'Associated gas' {'dy': 0.025}
+    1610ms +  800  scale    gastypes_s_7           [sp] '' {'s0': 0.8}
+    1610ms +  800  scale    gastypes_i_8           [pic] '' {'s0': 0.8}
+    1630ms +  800  rise     gastypes_t_6           [sp] 'Released with crude oil, so its output f' {'dy': 0.025}
+    1690ms +  800  rise     gastypes_t_9           [sp] 'Non-associated Jurassic gas' {'dy': 0.025}
+    1770ms +  800  scale    gastypes_s_11          [sp] '' {'s0': 0.8}
+    1770ms +  800  scale    gastypes_i_12          [pic] '' {'s0': 0.8}
+    1790ms +  800  rise     gastypes_t_10          [sp] 'Deep, high-pressure, sour gas in North K' {'dy': 0.025}
+    1850ms +  800  rise     gastypes_t_13          [sp] 'Imported LNG' {'dy': 0.025}
+    1950ms +  800  rise     gastypes_t_14          [sp] 'Imported since 2009; about 40% of the ga' {'dy': 0.025}
+    2250ms +  700  fade     gastypes_t_15          [sp] '63 Tcf (1.78 trillion m³) proven gas res' 
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 9  sec2          Resources &amp; Growth  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+       0ms + 1600  scale    !!drop                 [pic] '' {'s0': 0.88}
+     700ms +  900  rise     sec2_t_1               [sp] 'Reserves, output and an industry built a' {'dy': 0.025}
+     900ms +  600  fade     sec2_s_2               [sp] '' 
+     980ms +  600  fade     sec2_s_3               [sp] '' 
+    1060ms +  600  fade     sec2_s_4               [sp] '' 
+    1140ms +  600  fade     sec2_s_5               [sp] '' 
+    1220ms +  600  fade     sec2_s_6               [sp] '' 
+    1600ms + 3800  drift    !!drop                 [pic] '' {'dx': 0, 'dy': -0.016}
+  objects without animation: !!kicker, !!title, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 10  reserves      Seventh-largest oil reserves on Earth  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms + 1300  scale    reserves_t_1           [sp] '101.5' {'s0': 0.88}
+     500ms + 1700  wheel    reserves_share         [graphicFrame] '' 
+     650ms +  800  rise     reserves_t_2           [sp] 'billion barrels of proven crude oil' {'dy': 0.025}
+     850ms +  800  rise     reserves_t_3           [sp] 'Unchanged in official statistics since a' {'dy': 0.025}
+    1050ms +  800  rise     reserves_t_4           [sp] '≈\xa0100 years of output left at today’s ra' {'dy': 0.025}
+    1700ms +  900  scale    reserves_t_5           [sp] '6.5%' {'s0': 0.85}
+    1850ms +  700  fade     reserves_t_6           [sp] 'of world reserves' 
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 11  production    Eight decades of output  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms + 2800  wipeL    production_chart       [graphicFrame] '' 
+     300ms +  700  fade     production_t_12        [sp] 'mb/d = million barrels per day (total oi' 
+     451ms +  600  land     production_s_1         [sp] '' {'s0': 1.8}
+     551ms +  700  drop     production_t_2         [sp] '1946first exports' {'dy': 0.012}
+     551ms +  500  wipeB    production_s_3         [sp] '' 
+     906ms +  600  land     production_s_4         [sp] '' {'s0': 1.8}
+    1006ms +  700  drop     production_t_5         [sp] '1972 · 3.34 mb/dall-time peak' {'dy': 0.012}
+    1313ms +  600  land     production_s_6         [sp] '' {'s0': 1.8}
+    1413ms +  700  drop     production_t_7         [sp] '1991 · 0.19 mb/dinvasion and fires' {'dy': 0.012}
+    1921ms +  600  land     production_s_8         [sp] '' {'s0': 1.8}
+    2021ms +  700  drop     production_t_9         [sp] '2012 · ≈\xa03.2 mb/dpost-war high (est.)' {'dy': 0.012}
+    2522ms +  600  land     production_s_10        [sp] '' {'s0': 1.8}
+    2622ms +  700  rise     production_t_11        [sp] '2024 · 2.7 mb/dincl. NGLs; crude 2.4' {'dy': 0.012}
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 12  gasbalance    Burning more gas than it produces  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms + 2400  wipeL    gasbalance_area        [graphicFrame] '' 
+     300ms +  700  fade     gasbalance_t_3         [sp] 'billion m³ per year' 
+    1280ms +  600  fade     gasbalance_t_2         [sp] 'Domestic production' 
+    1700ms + 1100  scale    gasbalance_t_4         [sp] '40%' {'s0': 0.86}
+    1839ms +  600  fade     gasbalance_t_1         [sp] 'LNGimports' 
+    2000ms +  800  rise     gasbalance_t_5         [sp] 'of the gas Kuwait used in 2024 was impor' {'dy': 0.025}
+    2200ms +  800  rise     gasbalance_t_6         [sp] '≈\xa015 bcm produced vs ≈\xa025 bcm consumed. ' {'dy': 0.025}
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 13  chain         One state company, the whole chain  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms +  900  scale    chain_t_1              [sp] 'KUWAIT PETROLEUM CORPORATION (KPC)   ·  ' {'s0': 0.97}
+     500ms +  900  scale    chain_s_2              [sp] '' {'s0': 0.8}
+     500ms +  900  scale    chain_s_3              [sp] '' {'s0': 0.8}
+     500ms +  900  scale    chain_i_4              [pic] '' {'s0': 0.8}
+     620ms +  800  rise     chain_t_5              [sp] 'Upstream' {'dy': 0.025}
+     720ms +  800  rise     chain_t_6              [sp] 'KOC: Kuwait fieldsKGOC: Partitioned Zone' {'dy': 0.025}
+     800ms +  700  glide    chain_i_7              [pic] '' {'dx': -0.01, 'dy': 0}
+     800ms +  900  scale    chain_s_8              [sp] '' {'s0': 0.8}
+     800ms +  900  scale    chain_s_9              [sp] '' {'s0': 0.8}
+     800ms +  900  scale    chain_i_10             [pic] '' {'s0': 0.8}
+     920ms +  800  rise     chain_t_11             [sp] 'Shipping' {'dy': 0.025}
+    1020ms +  800  rise     chain_t_12             [sp] 'KOTC tankers(since 1957)' {'dy': 0.025}
+    1100ms +  700  glide    chain_i_13             [pic] '' {'dx': -0.01, 'dy': 0}
+    1100ms +  900  scale    chain_s_14             [sp] '' {'s0': 0.8}
+    1100ms +  900  scale    chain_s_15             [sp] '' {'s0': 0.8}
+    1100ms +  900  scale    chain_i_16             [pic] '' {'s0': 0.8}
+    1220ms +  800  rise     chain_t_17             [sp] 'Refining' {'dy': 0.025}
+    1320ms +  800  rise     chain_t_18             [sp] 'KNPC: two refineriesKIPIC: Al-Zour' {'dy': 0.025}
+    1400ms +  700  glide    chain_i_19             [pic] '' {'dx': -0.01, 'dy': 0}
+    1400ms +  900  scale    chain_s_20             [sp] '' {'s0': 0.8}
+    1400ms +  900  scale    chain_s_21             [sp] '' {'s0': 0.8}
+    1400ms +  900  scale    chain_i_22             [pic] '' {'s0': 0.8}
+    1520ms +  800  rise     chain_t_23             [sp] 'Petrochemicals' {'dy': 0.025}
+    1620ms +  800  rise     chain_t_24             [sp] 'PIC (since 1963)EQUATE group' {'dy': 0.025}
+    1700ms +  700  glide    chain_i_25             [pic] '' {'dx': -0.01, 'dy': 0}
+    1700ms +  900  scale    chain_s_26             [sp] '' {'s0': 0.8}
+    1700ms +  900  scale    chain_s_27             [sp] '' {'s0': 0.8}
+    1700ms +  900  scale    chain_i_28             [pic] '' {'s0': 0.8}
+    1820ms +  800  rise     chain_t_29             [sp] 'Marketing' {'dy': 0.025}
+    1920ms +  800  rise     chain_t_30             [sp] 'KPI: Q8 brandfuels &amp; refining abroad' {'dy': 0.025}
+    2700ms + 1500  breathe  chain_s_2              [sp] '' {'s': 1.2}
+    3060ms + 1500  breathe  chain_s_8              [sp] '' {'s': 1.2}
+    3420ms + 1500  breathe  chain_s_14             [sp] '' {'s': 1.2}
+    3780ms + 1500  breathe  chain_s_20             [sp] '' {'s': 1.2}
+    4140ms + 1500  breathe  chain_s_26             [sp] '' {'s': 1.2}
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 14  refining      Refining capacity more than doubled  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     300ms + 1100  wipeB    refining_s_1           [sp] '' 
+     300ms +  700  fade     refining_t_3           [sp] 'Jan 2021' 
+     300ms +  700  fade     refining_t_7           [sp] 'million b/d' 
+     750ms + 1100  wipeB    refining_s_4           [sp] '' 
+     750ms +  700  fade     refining_t_6           [sp] 'Jul 2023' 
+     950ms +  700  rise     refining_t_2           [sp] '0.6' {'dy': 0.015}
+    1150ms +  800  rise     refining_t_8           [sp] 'Al-Zour' {'dy': 0.025}
+    1250ms +  800  rise     refining_t_9           [sp] 'KIPIC · full capacity 2024' {'dy': 0.025}
+    1250ms +  900  wipeL    refining_s_10          [sp] '' 
+    1330ms +  800  rise     refining_t_12          [sp] 'Mina Abdullah' {'dy': 0.025}
+    1400ms +  700  rise     refining_t_5           [sp] '1.4' {'dy': 0.015}
+    1430ms +  800  rise     refining_t_13          [sp] 'KNPC · Clean Fuels Project' {'dy': 0.025}
+    1430ms +  900  wipeL    refining_s_14          [sp] '' 
+    1510ms +  800  rise     refining_t_16          [sp] 'Mina Al-Ahmadi' {'dy': 0.025}
+    1610ms +  800  rise     refining_t_17          [sp] 'KNPC · Clean Fuels Project' {'dy': 0.025}
+    1610ms +  900  wipeL    refining_s_18          [sp] '' 
+    1850ms +  500  fade     refining_t_11          [sp] '615' 
+    2030ms +  500  fade     refining_t_15          [sp] '454' 
+    2210ms +  500  fade     refining_t_19          [sp] '346' 
+    2600ms +  800  rise     refining_t_20          [sp] '= 1,415 kb/d of crude distillation in Ku' {'dy': 0.025}
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 15  sec3          Reservoir Locations  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+       0ms + 1600  scale    !!drop                 [pic] '' {'s0': 0.88}
+     700ms +  900  rise     sec3_t_1               [sp] 'Fields, regions and the rocks that hold ' {'dy': 0.025}
+     900ms +  600  fade     sec3_s_2               [sp] '' 
+     980ms +  600  fade     sec3_s_3               [sp] '' 
+    1060ms +  600  fade     sec3_s_4               [sp] '' 
+    1140ms +  600  fade     sec3_s_5               [sp] '' 
+    1220ms +  600  fade     sec3_s_6               [sp] '' 
+    1600ms + 3800  drift    !!drop                 [pic] '' {'dx': 0, 'dy': -0.016}
+  objects without animation: !!kicker, !!title, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 16  map           Kuwait’s oil and gas map  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     200ms + 1300  scale    !!map                  [pic] '' {'s0': 0.97}
+     600ms +  900  fade     !!c_iraq               [sp] 'IRAQ' 
+     600ms +  900  fade     !!c_saudi              [sp] 'SAUDI ARABIA' 
+     600ms +  900  fade     !!c_gulf               [sp] 'ARABIAN GULF' 
+     900ms +  650  land     !!f_burgan             [sp] '' {'s0': 1.9}
+     955ms +  650  land     !!f_raudhatain         [sp] '' {'s0': 1.9}
+    1010ms +  650  land     !!f_sabriya            [sp] '' {'s0': 1.9}
+    1065ms +  650  land     !!f_bahra              [sp] '' {'s0': 1.9}
+    1120ms +  650  land     !!f_ratqa              [sp] '' {'s0': 1.9}
+    1175ms +  650  land     !!f_abdali             [sp] '' {'s0': 1.9}
+    1230ms +  650  land     !!f_minagish           [sp] '' {'s0': 1.9}
+    1285ms +  650  land     !!f_ummgudair          [sp] '' {'s0': 1.9}
+    1340ms +  650  land     !!f_abduliyah          [sp] '' {'s0': 1.9}
+    1395ms +  650  land     !!f_dharif             [sp] '' {'s0': 1.9}
+    1450ms +  650  land     !!f_kramaru            [sp] '' {'s0': 1.9}
+    1505ms +  650  land     !!f_wafra              [sp] '' {'s0': 1.9}
+    1560ms +  650  land     !!f_khafji             [sp] '' {'s0': 1.9}
+    1615ms +  650  land     !!f_hout               [sp] '' {'s0': 1.9}
+    1670ms +  650  land     !!f_dorra              [sp] '' {'s0': 1.9}
+    1725ms +  650  land     !!f_nokhatha           [sp] '' {'s0': 1.9}
+    1780ms +  650  land     !!f_jlaiaa             [sp] '' {'s0': 1.9}
+    1800ms +  700  fade     !!fl_burgan            [sp] 'Greater Burgan' 
+    1800ms +  700  fade     !!fl_raudhatain        [sp] 'Raudhatain' 
+    1800ms +  700  fade     !!fk_raudhatain        [sp] '' 
+    1800ms +  700  fade     !!fl_sabriya           [sp] 'Sabriya' 
+    1800ms +  700  fade     !!fl_bahra             [sp] 'Bahra' 
+    1800ms +  700  fade     !!fl_ratqa             [sp] 'Ratqa (heavy oil)' 
+    1800ms +  700  fade     !!fl_abdali            [sp] 'Abdali' 
+    1800ms +  700  fade     !!fl_minagish          [sp] 'Minagish' 
+    1800ms +  700  fade     !!fl_ummgudair         [sp] 'Umm Gudair' 
+    1835ms +  650  land     !!f_kwcity             [sp] '' {'s0': 1.9}
+    1890ms +  650  land     !!f_ahmadi             [sp] '' {'s0': 1.9}
+    1900ms +  700  fade     !!fl_kramaru           [sp] 'Kra Al-Maru' 
+    1900ms +  700  fade     !!legend               [sp] '●  Oil   ●  Gas   ◆  Refinery / port   ○' 
+    1945ms +  650  land     !!f_zour               [sp] '' {'s0': 1.9}
+    1955ms +  700  fade     !!fl_wafra             [sp] 'Wafra' 
+    2010ms +  700  fade     !!fl_khafji            [sp] 'Khafji' 
+    2050ms +  700  fade     !!hint                 [sp] 'Click an area to zoom in' 
+    2100ms +  800  rise     !!pill0                [sp] '' {'dy': 0.025}
+    2100ms +  800  rise     !!pilld0               [sp] '' {'dy': 0.025}
+    2100ms +  800  rise     !!pillt0               [sp] 'South &amp; East Kuwait' {'dy': 0.025}
+    2120ms +  700  fade     !!fl_dorra             [sp] 'Dorra (gas)' 
+    2175ms +  700  fade     !!fl_nokhatha          [sp] 'Al-Nokhatha (2024)' 
+    2240ms +  800  rise     !!pill1                [sp] '' {'dy': 0.025}
+    2240ms +  800  rise     !!pilld1               [sp] '' {'dy': 0.025}
+    2240ms +  800  rise     !!pillt1               [sp] 'North Kuwait' {'dy': 0.025}
+    2285ms +  700  fade     !!fl_kwcity            [sp] 'Kuwait City' 
+    2300ms +  700  glide    !!pilla0               [pic] '' {'dx': -0.01, 'dy': 0}
+    2380ms +  800  rise     !!pill2                [sp] '' {'dy': 0.025}
+    2380ms +  800  rise     !!pilld2               [sp] '' {'dy': 0.025}
+    2380ms +  800  rise     !!pillt2               [sp] 'West Kuwait' {'dy': 0.025}
+    2395ms +  700  fade     !!fl_zour              [sp] 'Al-Zour' 
+    2440ms +  700  glide    !!pilla1               [pic] '' {'dx': -0.01, 'dy': 0}
+    2520ms +  800  rise     !!pill3                [sp] '' {'dy': 0.025}
+    2520ms +  800  rise     !!pilld3               [sp] '' {'dy': 0.025}
+    2520ms +  800  rise     !!pillt3               [sp] 'Partitioned Zone &amp; offshore' {'dy': 0.025}
+    2580ms +  700  glide    !!pilla2               [pic] '' {'dx': -0.01, 'dy': 0}
+    2600ms + 1700  breathe  !!f_burgan             [sp] '' {'s': 1.22}
+    2720ms +  700  glide    !!pilla3               [pic] '' {'dx': -0.01, 'dy': 0}
+    2920ms + 1700  breathe  !!f_raudhatain         [sp] '' {'s': 1.22}
+    3240ms + 1700  breathe  !!f_minagish           [sp] '' {'s': 1.22}
+    3560ms + 1700  breathe  !!f_khafji             [sp] '' {'s': 1.22}
+    3880ms + 1700  breathe  !!f_dorra              [sp] '' {'s': 1.22}
+  objects without animation: !!kicker, !!title, !!pillh0, !!pillh1, !!pillh2, !!pillh3, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 17  zoom_se       (hidden) South &amp; East Kuwait  | transition=morph dur=1400 advClick=False partner=16
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+    1000ms + 1700  breathe  !!f_burgan             [sp] '' {'s': 1.2}
+  objects without animation: !!kicker, !!title, !!map, !!mapframe, !!fl_burgan, !!f_minagish, !!f_ummgudair, !!f_abduliyah, !!f_dharif, !!f_kramaru, !!f_jlaiaa, !!f_kwcity, !!fl_kwcity, !!f_ahmadi, !!fl_ahmadi, !!f_abdullah, !!fl_abdullah, !!f_zour, !!fl_zour, !!f_ahmaditown, !!fl_ahmaditown, !!zsw0_bg, !!zsw0_tx, !!zsw0_hit, !!zsw1_bg, !!zsw1_tx, !!zsw1_hit, !!zsw2_bg, !!zsw2_tx, !!zsw2_hit, !!zsw3_bg, !!zsw3_tx, !!zsw3_hit, !!zlist, !!zback_bg, !!zback_ic, !!zback_tx, !!zback_hit, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 18  zoom_north    (hidden) North Kuwait  | transition=morph dur=1400 advClick=False partner=16
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+    1000ms + 1700  breathe  !!f_raudhatain         [sp] '' {'s': 1.2}
+  objects without animation: !!kicker, !!title, !!map, !!mapframe, !!fl_raudhatain, !!f_sabriya, !!fl_sabriya, !!f_bahra, !!fl_bahra, !!f_ratqa, !!fl_ratqa, !!f_abdali, !!fl_abdali, !!f_ummniqa, !!fl_ummniqa, !!zsw0_bg, !!zsw0_tx, !!zsw0_hit, !!zsw1_bg, !!zsw1_tx, !!zsw1_hit, !!zsw2_bg, !!zsw2_tx, !!zsw2_hit, !!zsw3_bg, !!zsw3_tx, !!zsw3_hit, !!zlist, !!zback_bg, !!zback_ic, !!zback_tx, !!zback_hit, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 19  zoom_west     (hidden) West Kuwait  | transition=morph dur=1400 advClick=False partner=16
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+    1000ms + 1700  breathe  !!f_minagish           [sp] '' {'s': 1.2}
+  objects without animation: !!kicker, !!title, !!map, !!mapframe, !!f_burgan, !!fl_minagish, !!f_ummgudair, !!fl_ummgudair, !!f_abduliyah, !!fl_abduliyah, !!f_dharif, !!fl_dharif, !!f_kramaru, !!fl_kramaru, !!f_kwcity, !!f_ahmadi, !!f_abdullah, !!f_ahmaditown, !!zsw0_bg, !!zsw0_tx, !!zsw0_hit, !!zsw1_bg, !!zsw1_tx, !!zsw1_hit, !!zsw2_bg, !!zsw2_tx, !!zsw2_hit, !!zsw3_bg, !!zsw3_tx, !!zsw3_hit, !!zlist, !!zback_bg, !!zback_ic, !!zback_tx, !!zback_hit, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 20  zoom_pz       (hidden) Partitioned Zone &amp; offshore  | transition=morph dur=1400 advClick=False partner=16
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+    1000ms + 1700  breathe  !!f_khafji             [sp] '' {'s': 1.2}
+    1000ms + 1700  breathe  !!f_dorra              [sp] '' {'s': 1.2}
+  objects without animation: !!kicker, !!title, !!map, !!mapframe, !!f_burgan, !!f_minagish, !!f_ummgudair, !!f_abduliyah, !!f_dharif, !!f_kramaru, !!f_wafra, !!fl_wafra, !!fl_khafji, !!f_hout, !!fl_hout, !!fl_dorra, !!f_nokhatha, !!fl_nokhatha, !!f_jlaiaa, !!fl_jlaiaa, !!f_kwcity, !!f_ahmadi, !!f_abdullah, !!f_zour, !!fl_zour, !!f_ahmaditown, !!zsw0_bg, !!zsw0_tx, !!zsw0_hit, !!zsw1_bg, !!zsw1_tx, !!zsw1_hit, !!zsw2_bg, !!zsw2_tx, !!zsw2_hit, !!zsw3_bg, !!zsw3_tx, !!zsw3_hit, !!zlist, !!zback_bg, !!zback_ic, !!zback_tx, !!zback_hit, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 21  maphub        (hidden) Kuwait’s oil and gas map  | transition=morph dur=1400 advClick=False partner=17
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     300ms + 1700  breathe  !!f_burgan             [sp] '' {'s': 1.22}
+     620ms + 1700  breathe  !!f_raudhatain         [sp] '' {'s': 1.22}
+     940ms + 1700  breathe  !!f_minagish           [sp] '' {'s': 1.22}
+    1260ms + 1700  breathe  !!f_khafji             [sp] '' {'s': 1.22}
+    1580ms + 1700  breathe  !!f_dorra              [sp] '' {'s': 1.22}
+  objects without animation: !!kicker, !!title, !!map, !!fl_burgan, !!fl_raudhatain, !!fk_raudhatain, !!f_sabriya, !!fl_sabriya, !!f_bahra, !!fl_bahra, !!f_ratqa, !!fl_ratqa, !!f_abdali, !!fl_abdali, !!fl_minagish, !!f_ummgudair, !!fl_ummgudair, !!f_abduliyah, !!f_dharif, !!f_kramaru, !!fl_kramaru, !!f_wafra, !!fl_wafra, !!fl_khafji, !!f_hout, !!fl_dorra, !!f_nokhatha, !!fl_nokhatha, !!f_jlaiaa, !!f_kwcity, !!fl_kwcity, !!f_ahmadi, !!f_zour, !!fl_zour, !!c_iraq, !!c_saudi, !!c_gulf, !!legend, !!hint, !!pill0, !!pilld0, !!pillt0, !!pilla0, !!pillh0, !!pill1, !!pilld1, !!pillt1, !!pilla1, !!pillh1, !!pill2, !!pilld2, !!pillt2, !!pilla2, !!pillh2, !!pill3, !!pilld3, !!pillt3, !!pilla3, !!pillh3, hub_next_bg, hub_next_ic, hub_next_tx, hub_next_hit, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 22  regions       Four producing areas  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     400ms +  900  scale    regions_s_1            [sp] '' {'s0': 0.96}
+     460ms +  700  scale    regions_s_2            [sp] '' {'s0': 0.7}
+     500ms +  800  rise     regions_t_3            [sp] 'South &amp; East Kuwait' {'dy': 0.025}
+     580ms +  800  rise     regions_t_4            [sp] 'Greater Burgan (Burgan, Magwa, Ahmadi); ' {'dy': 0.025}
+     600ms +  900  scale    regions_s_8            [sp] '' {'s0': 0.96}
+     660ms +  800  rise     regions_t_5            [sp] 'World’s second-largest oil field; Burgan' {'dy': 0.025}
+     660ms +  700  scale    regions_s_9            [sp] '' {'s0': 0.7}
+     700ms +  700  glide    regions_i_6            [pic] '' {'dx': -0.01, 'dy': 0}
+     700ms +  800  rise     regions_t_10           [sp] 'North Kuwait' {'dy': 0.025}
+     780ms +  800  rise     regions_t_11           [sp] 'Raudhatain, Sabriya, Bahra, Ratqa, Abdal' {'dy': 0.025}
+     800ms +  900  scale    regions_s_15           [sp] '' {'s0': 0.96}
+     860ms +  800  rise     regions_t_12           [sp] 'Cretaceous oil, deep Jurassic gas and Lo' {'dy': 0.025}
+     860ms +  700  scale    regions_s_16           [sp] '' {'s0': 0.7}
+     900ms +  700  glide    regions_i_13           [pic] '' {'dx': -0.01, 'dy': 0}
+     900ms +  800  rise     regions_t_17           [sp] 'West Kuwait' {'dy': 0.025}
+     980ms +  800  rise     regions_t_18           [sp] 'Minagish, Umm Gudair, Abduliyah, Dharif,' {'dy': 0.025}
+    1000ms +  900  scale    regions_s_22           [sp] '' {'s0': 0.96}
+    1060ms +  800  rise     regions_t_19           [sp] 'Minagish Oolite and Ratawi reservoirs; 2' {'dy': 0.025}
+    1060ms +  700  scale    regions_s_23           [sp] '' {'s0': 0.7}
+    1100ms +  700  glide    regions_i_20           [pic] '' {'dx': -0.01, 'dy': 0}
+    1100ms +  800  rise     regions_t_24           [sp] 'Partitioned Zone &amp; offshore' {'dy': 0.025}
+    1180ms +  800  rise     regions_t_25           [sp] 'Wafra, Khafji, Hout, Dorra gas; new: Al-' {'dy': 0.025}
+    1260ms +  800  rise     regions_t_26           [sp] 'Shared 50:50 with Saudi Arabia; offshore' {'dy': 0.025}
+    1300ms +  700  glide    regions_i_27           [pic] '' {'dx': -0.01, 'dy': 0}
+  objects without animation: !!kicker, !!title, !!map, !!f_burgan, !!f_raudhatain, !!f_sabriya, !!f_bahra, !!f_ratqa, !!f_abdali, !!f_minagish, !!f_ummgudair, !!f_abduliyah, !!f_dharif, !!f_kramaru, !!f_wafra, !!f_khafji, !!f_hout, !!f_dorra, !!f_nokhatha, !!f_jlaiaa, !!f_kwcity, !!f_ahmadi, !!f_zour, regions_s_7, regions_s_14, regions_s_21, regions_s_28, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 23  strata        Reservoirs from shallow to deep  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms +  600  wipeL    strata_s_20            [sp] '' 
+     370ms +  600  wipeL    strata_s_18            [sp] '' 
+     450ms +  600  fade     strata_t_21            [sp] 'Marrat  Early Jurassic carbonate' 
+     490ms +  600  wipeL    strata_s_16            [sp] '' 
+     570ms +  600  fade     strata_t_19            [sp] 'Najmah / Sargelu  Middle–Late Jurassic c' 
+     610ms +  600  wipeL    strata_s_14            [sp] '' 
+     690ms +  600  fade     strata_t_17            [sp] 'Minagish  Early Cretaceous oolitic limes' 
+     730ms +  600  wipeL    strata_s_12            [sp] '' 
+     810ms +  600  fade     strata_t_15            [sp] 'Ratawi  Early Cretaceous limestone and s' 
+     850ms +  600  wipeL    strata_s_10            [sp] '' 
+     930ms +  600  fade     strata_t_13            [sp] 'Zubair  Early Cretaceous sandstone' 
+     970ms +  600  wipeL    strata_s_8             [sp] '' 
+    1050ms +  600  fade     strata_t_11            [sp] 'Burgan  Mid-Cretaceous (Albian) sandston' 
+    1090ms +  600  wipeL    strata_s_6             [sp] '' 
+    1170ms +  600  fade     strata_t_9             [sp] 'Mauddud  Mid-Cretaceous carbonate' 
+    1210ms +  600  wipeL    strata_s_4             [sp] '' 
+    1290ms +  600  fade     strata_t_7             [sp] 'Wara  Mid-Cretaceous sandstone' 
+    1330ms +  600  wipeL    strata_s_2             [sp] '' 
+    1410ms +  600  fade     strata_t_5             [sp] 'Mishrif  Mid-Cretaceous carbonate' 
+    1500ms +  800  wipeT    strata_i_1             [pic] '' 
+    1530ms +  600  fade     strata_t_3             [sp] 'Lower Fars  Miocene sandstone' 
+    2100ms +  600  wipeT    strata_s_22            [sp] '' 
+    2200ms +  700  rise     strata_t_23            [sp] 'Heavy oilShallow Lower Fars sands, Ratqa' {'dy': 0.025}
+    2280ms +  600  wipeT    strata_s_24            [sp] '' 
+    2380ms +  700  rise     strata_t_25            [sp] 'Kuwait Export CrudeCretaceous sandstones' {'dy': 0.025}
+    2460ms +  600  wipeT    strata_s_26            [sp] '' 
+    2560ms +  700  rise     strata_t_27            [sp] 'Super-light oil &amp; sour gasDeep Juras' {'dy': 0.025}
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 24  sec4          Exports &amp; Costs  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+       0ms + 1600  scale    !!drop                 [pic] '' {'s0': 0.88}
+     700ms +  900  rise     sec4_t_1               [sp] 'Who buys Kuwait’s oil, and what it costs' {'dy': 0.025}
+     900ms +  600  fade     sec4_s_2               [sp] '' 
+     980ms +  600  fade     sec4_s_3               [sp] '' 
+    1060ms +  600  fade     sec4_s_4               [sp] '' 
+    1140ms +  600  fade     sec4_s_5               [sp] '' 
+    1220ms +  600  fade     sec4_s_6               [sp] '' 
+    1600ms + 3800  drift    !!drop                 [pic] '' {'dx': 0, 'dy': -0.016}
+  objects without animation: !!kicker, !!title, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 25  destinations  Nine in ten barrels sail to Asia  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms + 1300  scale    destinations_t_1       [sp] '93%' {'s0': 0.88}
+     300ms + 1200  fade     fm_map                 [pic] '' 
+     600ms +  800  rise     destinations_t_2       [sp] 'of crude exports by volume went to Asia-' {'dy': 0.025}
+     700ms +  700  land     fm_kw                  [sp] '' {'s0': 2}
+     800ms +  800  rise     destinations_t_3       [sp] 'OPEC as a whole sent about 72% to Asia. ' {'dy': 0.025}
+     800ms +  700  fade     fm_kwl                 [sp] 'Kuwait' 
+     900ms +  700  wipeL    fm_trunk               [sp] '' 
+    1200ms +  600  land     fm_hz                  [sp] '' {'s0': 2}
+    1250ms +  900  wipeL    fm_east                [sp] '' 
+    1300ms +  900  wipeL    fm_b0                  [sp] '' 
+    1300ms +  700  fade     fm_hzl                 [sp] 'Strait of Hormuz' 
+    1500ms + 1700  breathe  fm_kw                  [sp] '' {'s': 1.12}
+    1990ms +  800  wipeL    fm_b1                  [sp] '' 
+    2000ms +  600  land     fm_d0                  [sp] '' {'s0': 1.8}
+    2080ms +  800  wipeL    fm_b2                  [sp] '' 
+    2150ms +  700  fade     fm_l0                  [sp] 'India 11%' 
+    2170ms +  800  wipeL    fm_b3                  [sp] '' 
+    2260ms +  800  wipeL    fm_b4                  [sp] '' 
+    2540ms +  600  land     fm_d1                  [sp] '' {'s0': 1.8}
+    2630ms +  600  land     fm_d2                  [sp] '' {'s0': 1.8}
+    2690ms +  700  fade     fm_l1                  [sp] 'Taiwan 11%' 
+    2720ms +  600  land     fm_d3                  [sp] '' {'s0': 1.8}
+    2780ms +  700  fade     fm_l2                  [sp] 'China 33%' 
+    2810ms +  600  land     fm_d4                  [sp] '' {'s0': 1.8}
+    2870ms +  700  fade     fm_l3                  [sp] 'S. Korea 23%' 
+    2960ms +  700  fade     fm_l4                  [sp] 'Japan 17%' 
+    3000ms +  700  fade     fm_lg                  [sp] 'Labels and line widths: share of 2024 cr' 
+    3300ms +    1  appear   fm_tk0                 [sp] '' 
+    3300ms + 7000  travel   fm_tk0                 [sp] '' 
+    4500ms +    1  appear   fm_tk2                 [sp] '' 
+    4500ms + 7000  travel   fm_tk2                 [sp] '' 
+    6800ms +    1  appear   fm_tk1                 [sp] '' 
+    6800ms + 7000  travel   fm_tk1                 [sp] '' 
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 26  crudeproducts Exporting fuels, not just crude  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms + 1900  wipeL    crudeproducts_lines    [graphicFrame] '' 
+     300ms +  700  fade     crudeproducts_t_3      [sp] 'Exports, kb/d (thousand barrels per day)' 
+     500ms +  700  fade     crudeproducts_t_1      [sp] 'Crude oil' 
+     600ms +  700  fade     crudeproducts_t_2      [sp] 'Refined products (incl. LPG)' 
+    1336ms +  700  land     crudeproducts_s_4      [sp] '' {'s0': 1.8}
+    1750ms + 1000  scale    crudeproducts_t_5      [sp] '2024' {'s0': 0.88}
+    2000ms +  800  rise     crudeproducts_t_6      [sp] 'the first year product exports (1.20\xa0mil' {'dy': 0.025}
+    2200ms +  800  rise     crudeproducts_t_7      [sp] 'Al-Zour ran at full capacity, so crude w' {'dy': 0.025}
+    3200ms + 1500  breathe  crudeproducts_s_4      [sp] '' {'s': 1.15}
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 27  prices        The price of a barrel, 2000–2025  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms + 2600  wipeL    prices_brent           [graphicFrame] '' 
+     250ms +  600  fade     prices_t_1             [sp] '2000' 
+     497ms +  600  fade     prices_t_2             [sp] '2005' 
+     777ms +  600  fade     prices_t_3             [sp] '2010' 
+     799ms +  600  land     prices_s_7             [sp] '' {'s0': 1.8}
+     899ms +  700  drop     prices_t_8             [sp] '2008$97 average, $144 peak' {'dy': 0.012}
+    1110ms +  600  fade     prices_t_4             [sp] '2015' 
+    1308ms +  600  land     prices_s_9             [sp] '' {'s0': 1.8}
+    1408ms +  700  rise     prices_t_10            [sp] '2016$44 average, $26 low' {'dy': 0.012}
+    1544ms +  600  fade     prices_t_5             [sp] '2020' 
+    1641ms +  600  land     prices_s_11            [sp] '' {'s0': 1.8}
+    1741ms +  700  rise     prices_t_12            [sp] '2020COVID-19: $42' {'dy': 0.012}
+    1848ms +  600  land     prices_s_13            [sp] '' {'s0': 1.8}
+    1948ms +  700  drop     prices_t_14            [sp] '2022war in Ukraine: $101' {'dy': 0.012}
+    2000ms +  900  scale    prices_t_15            [sp] 'Kuwait Export Crude$84.26  (2023)$80.65 ' {'s0': 0.95}
+    2250ms +  700  rise     prices_t_16            [sp] '2026 so far: Brent averaged $93.03 up to' {'dy': 0.025}
+    2590ms +  600  fade     prices_t_6             [sp] '2025' 
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 28  cost          One of the cheapest barrels on Earth  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     300ms +  800  rise     cost_t_1               [sp] 'Kuwait: cost per barrel' {'dy': 0.025}
+     400ms +  800  fade     cost_t_2               [sp] 'Rystad Energy via WSJ, 2016 estimate' 
+     400ms +  900  wipeL    cost_s_3               [sp] '' 
+     680ms +  800  rise     cost_t_5               [sp] 'UK North Sea: cost per barrel' {'dy': 0.025}
+     780ms +  800  fade     cost_t_6               [sp] 'same study, for comparison' 
+     780ms +  900  wipeL    cost_s_7               [sp] '' 
+    1060ms +  800  rise     cost_t_9               [sp] 'Kuwait crude: selling price' {'dy': 0.025}
+    1100ms +  600  rise     cost_t_4               [sp] '≈\xa0$8.50' {'dy': 0.012}
+    1160ms +  800  fade     cost_t_10              [sp] 'Kuwait Export Crude, OPEC, 2024' 
+    1160ms +  900  wipeL    cost_s_11              [sp] '' 
+    1480ms +  600  rise     cost_t_8               [sp] '≈\xa0$44' {'dy': 0.012}
+    1860ms +  600  rise     cost_t_12              [sp] '$80.65' {'dy': 0.012}
+    2300ms +  800  rise     cost_t_13              [sp] '≈\xa0$72 per barrel above cost: 2024 price ' {'dy': 0.025}
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 29  lng           Where Kuwait’s LNG comes from  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms + 1700  wheel    lng_lng                [graphicFrame] '' 
+     700ms +  600  scale    lng_s_3                [sp] '' {'s0': 0.6}
+     700ms +  700  rise     lng_t_4                [sp] 'Qatar  61.4%' {'dy': 0.012}
+     790ms +  600  scale    lng_s_5                [sp] '' {'s0': 0.6}
+     790ms +  700  rise     lng_t_6                [sp] 'Nigeria  16.6%' {'dy': 0.012}
+     880ms +  600  scale    lng_s_7                [sp] '' {'s0': 0.6}
+     880ms +  700  rise     lng_t_8                [sp] 'United States  9.5%' {'dy': 0.012}
+     970ms +  600  scale    lng_s_9                [sp] '' {'s0': 0.6}
+     970ms +  700  rise     lng_t_10               [sp] 'Angola  3.7%' {'dy': 0.012}
+    1060ms +  600  scale    lng_s_11               [sp] '' {'s0': 0.6}
+    1060ms +  700  rise     lng_t_12               [sp] 'Oman  3.0%' {'dy': 0.012}
+    1150ms +  600  scale    lng_s_13               [sp] '' {'s0': 0.6}
+    1150ms +  700  rise     lng_t_14               [sp] 'Russia  3.0%' {'dy': 0.012}
+    1240ms +  600  scale    lng_s_15               [sp] '' {'s0': 0.6}
+    1240ms +  700  rise     lng_t_16               [sp] 'Others  2.9%' {'dy': 0.012}
+    1400ms +  900  scale    lng_t_1                [sp] '9.73' {'s0': 0.85}
+    1500ms +  900  rise     lng_t_17               [sp] '≈\xa07.15 Mt' {'dy': 0.025}
+    1550ms +  700  fade     lng_t_2                [sp] 'bcm imported, 2024' 
+    1650ms +  700  fade     lng_t_18               [sp] 'of LNG in 2024, about 40% of all the gas' 
+    1720ms +  900  rise     lng_t_19               [sp] '$33.98 → $11.91' {'dy': 0.025}
+    1870ms +  700  fade     lng_t_20               [sp] 'Asian spot LNG price (JKM) per MMBtu, 20' 
+    1940ms +  900  rise     lng_t_21               [sp] '≈\xa0$4 bn' {'dy': 0.025}
+    2090ms +  700  fade     lng_t_22               [sp] 'estimated 2024 import bill at spot price' 
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 30  hormuz        When the Strait of Hormuz closed  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms + 2600  breathe  !!orbA                 [pic] '' {'s': 1.12}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     250ms +  700  fade     hormuz_t_1             [sp] 'Kuwait crude exports, 2026 (kb/d = thous' 
+     350ms +  900  wipeB    hormuz_s_2             [sp] '' 
+     350ms +  600  fade     hormuz_t_4             [sp] 'Jan' 
+     490ms +  900  wipeB    hormuz_s_6             [sp] '' 
+     490ms +  600  fade     hormuz_t_8             [sp] 'Feb' 
+     630ms +  900  wipeB    hormuz_s_10            [sp] '' 
+     630ms +  600  fade     hormuz_t_12            [sp] 'Mar' 
+     770ms +  900  wipeB    hormuz_s_14            [sp] '' 
+     770ms +  600  fade     hormuz_t_16            [sp] 'Apr' 
+     910ms +  900  wipeB    hormuz_s_18            [sp] '' 
+     910ms +  600  fade     hormuz_t_20            [sp] 'May' 
+     950ms +  600  rise     hormuz_t_3             [sp] '1,254' {'dy': 0.01}
+    1050ms +  900  wipeB    hormuz_s_22            [sp] '' 
+    1050ms +  600  fade     hormuz_t_24            [sp] 'Jun' 
+    1090ms +  600  rise     hormuz_t_7             [sp] '1,213' {'dy': 0.01}
+    1190ms +  900  wipeB    hormuz_s_26            [sp] '' 
+    1190ms +  600  fade     hormuz_t_28            [sp] 'Jul' 
+    1200ms +  700  wipeL    hormuz_s_31            [sp] '' 
+    1230ms +  600  rise     hormuz_t_11            [sp] '500' {'dy': 0.01}
+    1300ms +  700  fade     hormuz_t_32            [sp] 'Hormuz disruption' 
+    1370ms +  600  rise     hormuz_t_15            [sp] '41' {'dy': 0.01}
+    1400ms +  600  fade     hormuz_t_30            [sp] 'Row above: Brent, monthly average (US$ p' 
+    1500ms +  600  fade     hormuz_t_5             [sp] '$67' 
+    1510ms +  600  rise     hormuz_t_19            [sp] '24' {'dy': 0.01}
+    1570ms +  600  fade     hormuz_t_9             [sp] '$71' 
+    1640ms +  600  fade     hormuz_t_13            [sp] '$103' 
+    1650ms +  600  rise     hormuz_t_23            [sp] '1,060' {'dy': 0.01}
+    1700ms +  800  rise     hormuz_t_33            [sp] '7 March' {'dy': 0.025}
+    1710ms +  600  fade     hormuz_t_17            [sp] '$117' 
+    1780ms +  600  fade     hormuz_t_21            [sp] '$107' 
+    1790ms +  600  rise     hormuz_t_27            [sp] '1,129' {'dy': 0.01}
+    1850ms +  600  fade     hormuz_t_25            [sp] '$85' 
+    1850ms +  700  fade     hormuz_t_34            [sp] 'KPC declares force majeure as tankers st' 
+    1920ms +  600  fade     hormuz_t_29            [sp] '$84' 
+    1920ms +  800  rise     hormuz_t_35            [sp] '−98%' {'dy': 0.025}
+    2070ms +  700  fade     hormuz_t_36            [sp] 'crude exports from 1,213\xa0kb/d (Feb) to 2' 
+    2140ms +  800  rise     hormuz_t_37            [sp] '$138' {'dy': 0.025}
+    2290ms +  700  fade     hormuz_t_38            [sp] 'Brent peak on 7 April 2026' 
+    2360ms +  800  rise     hormuz_t_39            [sp] '0' {'dy': 0.025}
+    2510ms +  700  fade     hormuz_t_40            [sp] 'export routes that bypass the Gulf: ever' 
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 31  takeaways     What the numbers say  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     300ms +  900  scale    takeaways_s_1          [sp] '' {'s0': 0.96}
+     380ms +  800  scale    takeaways_s_2          [sp] '' {'s0': 0.8}
+     380ms +  800  scale    takeaways_i_3          [pic] '' {'s0': 0.8}
+     450ms +  800  rise     takeaways_t_4          [sp] 'Vast, low-cost oil' {'dy': 0.025}
+     480ms +  900  scale    takeaways_s_6          [sp] '' {'s0': 0.96}
+     550ms +  800  rise     takeaways_t_5          [sp] '101.5 billion barrels (6.5% of the world' {'dy': 0.025}
+     560ms +  800  scale    takeaways_s_7          [sp] '' {'s0': 0.8}
+     560ms +  800  scale    takeaways_i_8          [pic] '' {'s0': 0.8}
+     630ms +  800  rise     takeaways_t_9          [sp] 'A growing gas gap' {'dy': 0.025}
+     660ms +  900  scale    takeaways_s_11         [sp] '' {'s0': 0.96}
+     730ms +  800  rise     takeaways_t_10         [sp] 'About 40% of the gas Kuwait uses is impo' {'dy': 0.025}
+     740ms +  800  scale    takeaways_s_12         [sp] '' {'s0': 0.8}
+     740ms +  800  scale    takeaways_i_13         [pic] '' {'s0': 0.8}
+     810ms +  800  rise     takeaways_t_14         [sp] 'From crude to products' {'dy': 0.025}
+     840ms +  900  scale    takeaways_s_16         [sp] '' {'s0': 0.96}
+     910ms +  800  rise     takeaways_t_15         [sp] 'Al-Zour and the Clean Fuels Project lift' {'dy': 0.025}
+     920ms +  800  scale    takeaways_s_17         [sp] '' {'s0': 0.8}
+     920ms +  800  scale    takeaways_i_18         [pic] '' {'s0': 0.8}
+     990ms +  800  rise     takeaways_t_19         [sp] 'Asia-bound via Hormuz' {'dy': 0.025}
+    1090ms +  800  rise     takeaways_t_20         [sp] '93% of crude goes to Asia, and every exp' {'dy': 0.025}
+    1300ms +  900  fade     takeaways_t_21         [sp] 'Next: KPC targets 4 million b/d of crude' 
+  objects without animation: !!kicker, !!title, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 32  refs          Key sources  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+     300ms +  900  rise     refs_t_1               [sp] 'CNBC. (2026, March 7). Kuwait cuts oil p' {'dy': 0.015}
+     500ms +  900  rise     refs_t_2               [sp] 'Naqi, M., Alsalem, O., &amp; Qabazard, S' {'dy': 0.015}
+  objects without animation: !!kicker, !!title, !!source, !!home_bg, !!home_ic, !!home_hit, !!footer, !!num, !!badge
+
+=== 33  thanks        Thank you  | transition=morph dur=1400 advClick=True partner=None
+       0ms +13000  drift    !!orbA                 [pic] '' {'dx': 0.035, 'dy': -0.03}
+       0ms +15000  drift    !!orbB                 [pic] '' {'dx': -0.03, 'dy': 0.025}
+       0ms + 3800  drift    !!drop                 [pic] '' {'dx': 0, 'dy': -0.014}
+     600ms +  900  rise     thanks_t_1             [sp] 'Questions?' {'dy': 0.025}
+     900ms +  900  rise     thanks_t_2             [sp] 'Shahad Issa Obaid AlghriabiEGCH2230 · Pe' {'dy': 0.025}
+    1300ms +  700  fade     thanks_s_3             [sp] '' 
+    1300ms +  700  fade     thanks_t_4             [sp] 'Back to contents' 
+  objects without animation: !!title, thanks_s_5, !!badge

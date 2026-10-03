@@ -1,4 +1,4 @@
-// Design system for the Kuwait deck: theme, layouts, logo badge, helpers, animation registry.
+// Design system for the Kuwait deck: theme, layouts with the UTAS logo badge, animation registry.
 const fs = require("fs");
 const path = require("path");
 const pptxgen = require("pptxgenjs");
@@ -25,26 +25,17 @@ const HEX = {
   line: "3A3A3C", oil: "FF9F0A", gas: "64D2FF", gold: "FFD60A", red: "FF453A", green: "30D158", gray: "636366",
 };
 
-// Logo badge (top-right on every layout). Uses assets/utas_logo.png when present.
-const BADGE = { w: 1.05, h: 1.05, y: 0.3 };
-BADGE.x = W - MX - BADGE.w;
+// UTAS logo badge (white tile, logo inside) — top-right of every slide; larger on the title slide.
+// The badge and footer are added to each slide last (see deck_kit chrome) so the drifting ambient light never tints them.
+const BADGE = { w: 2.15, y: 0.3 };
+const BADGE_TITLE = { w: 3.0, y: 0.45 };
+const TITLE_W = 9.55; // title/kicker width: ends 0.28" before the badge
+const CARD_R = 0.14;  // corner radius shared by every card
 
-async function logoObjects() {
-  const tile = { text: { text: "", options: { shape: "roundRect", x: BADGE.x, y: BADGE.y, w: BADGE.w, h: BADGE.h,
-    fill: { color: "FFFFFF" }, rectRadius: 0.14, line: { type: "none" } } } };
-  const file = fs.existsSync(A("utas_logo.png")) ? A("utas_logo.png") : A("logo_placeholder.png");
-  if (!fs.existsSync(file)) {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
-      <rect x="40" y="40" width="520" height="520" rx="40" fill="none" stroke="#8E8E93" stroke-width="10" stroke-dasharray="30 20"/>
-      <text x="300" y="285" font-family="Arial" font-size="92" font-weight="bold" fill="#636366" text-anchor="middle">UTAS</text>
-      <text x="300" y="390" font-family="Arial" font-size="64" fill="#8E8E93" text-anchor="middle">logo</text></svg>`;
-    await sharp(Buffer.from(svg)).png().toFile(file);
-  }
-  const meta = await sharp(file).metadata();
-  const pad = 0.1, bw = BADGE.w - 2 * pad, bh = BADGE.h - 2 * pad;
-  const s = Math.min(bw / meta.width, bh / meta.height);
-  const w = meta.width * s, h = meta.height * s;
-  return [tile, { image: { path: file, x: BADGE.x + (BADGE.w - w) / 2, y: BADGE.y + (BADGE.h - h) / 2, w, h } }];
+async function badgeObject(spec) {
+  const meta = await sharp(A("logo_badge.png")).metadata();
+  const h = spec.w * meta.height / meta.width;
+  return { image: { path: A("logo_badge.png"), x: W - MX - spec.w, y: spec.y, w: spec.w, h } };
 }
 
 async function makePres() {
@@ -56,38 +47,34 @@ async function makePres() {
   pres.subject = "EGCH2230 Petroleum and Petrochemical Processing";
   pres.title = "Kuwait: A Century of Oil and Gas";
   const C = pres.SchemeColor;
-  const logo = await logoObjects();
-  const footer = [{ text: { text: "Kuwait Oil & Gas  ·  EGCH2230", options: { x: MX, y: 6.92, w: 6, h: 0.32,
-    fontSize: 12, color: C.text2, margin: 0, valign: "middle" } } }];
-  const num = { x: W - MX - 0.6, y: 6.92, w: 0.6, h: 0.32, fontSize: 12, color: C.text2, align: "right", margin: 0, valign: "middle" };
+  const badge = await badgeObject(BADGE), badgeTitle = await badgeObject(BADGE_TITLE);
+  const bg = { path: A("bg_base.jpg") };
 
-  pres.defineSlideMaster({ title: "Title", background: { path: A("bg_title.jpg") }, objects: [...logo] });
-  pres.defineSlideMaster({ title: "Section", background: { path: A("bg_section.jpg") }, objects: [...logo, ...footer], slideNumber: num });
-  for (const [name, bg] of [["Content", "bg_content.jpg"], ["Gas", "bg_gas.jpg"], ["Fire", "bg_fire.jpg"]]) {
-    pres.defineSlideMaster({
-      title: name, background: { path: A(bg) },
-      objects: [
-        ...logo, ...footer,
-        { placeholder: { options: { name: "kicker", type: "body", x: MX, y: 0.42, w: 9.8, h: 0.36, fontSize: 15, bold: true,
-          color: C.accent1, charSpacing: 3, margin: 0, valign: "top", align: "left" }, text: "" } },
-        { placeholder: { options: { name: "title", type: "title", x: MX, y: 0.8, w: 10.4, h: 0.86, fontSize: 38, bold: true,
-          color: C.text1, margin: 0, valign: "top", align: "left" }, text: "" } },
-      ],
-      slideNumber: num,
-    });
-  }
-  return { pres, C };
+  pres.defineSlideMaster({ title: "Title", background: bg, objects: [] });
+  // slide numbers are static text (deck_kit chrome): the hidden zoom slides sit inside the running order, and a
+  // field would make the visible numbering jump over them
+  pres.defineSlideMaster({ title: "Section", background: bg, objects: [] });
+  pres.defineSlideMaster({
+    title: "Content", background: bg,
+    objects: [
+      { placeholder: { options: { name: "kicker", type: "body", x: MX, y: 0.42, w: TITLE_W, h: 0.36, fontSize: 15, bold: true,
+        color: C.accent1, charSpacing: 3, margin: 0, valign: "top", align: "left" }, text: "" } },
+      { placeholder: { options: { name: "title", type: "title", x: MX, y: 0.8, w: TITLE_W, h: 0.86, fontSize: 38, bold: true,
+        color: C.text1, margin: 0, valign: "top", align: "left" }, text: "" } },
+    ],
+  });
+  return { pres, C, chrome: { badge: badge.image, badgeTitle: badgeTitle.image } };
 }
 
 // Animation registry -> anim.json consumed by animate.py
 class Anim {
   constructor() { this.slides = {}; }
-  begin(n, transition = "morph", dur = 1400) {
-    this.cur = { transition, dur, anims: [], triggers: [] }; this.slides[n] = this.cur;
-  }
-  add(name, effect = "float", delay = 0, dur = 700) { this.cur.anims.push({ name, effect, delay, dur }); return name; }
+  begin(n, opts) { this.cur = Object.assign({ transition: "morph", dur: 1400, anims: [], triggers: [] }, opts); this.slides[n] = this.cur; }
+  add(name, effect, delay = 0, dur = 800, params = {}) { this.cur.anims.push(Object.assign({ name, effect, delay: Math.round(delay), dur: Math.round(dur) }, params)); return name; }
+  hang(name, emu) { (this.cur.hang = this.cur.hang || {})[name] = emu; }
+  roundCaps(...names) { (this.cur.roundCaps = this.cur.roundCaps || []).push(...names); }
   trigger(trigger, targets) { this.cur.triggers.push({ trigger, targets }); }
   write(file) { fs.writeFileSync(file, JSON.stringify({ slides: this.slides }, null, 1)); }
 }
 
-module.exports = { makePres, THEME, HEX, W, H, MX, A, Anim, BADGE };
+module.exports = { makePres, THEME, HEX, W, H, MX, A, Anim, BADGE, TITLE_W, CARD_R };

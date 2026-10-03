@@ -1,42 +1,568 @@
 {
  "fields": [
-  {"id": "burgan", "name": "Greater Burgan", "lat": 29.015, "lon": 47.960, "kind": "oil", "major": true, "label": [0.13, 0.12, "left"]},
-  {"id": "khashman", "name": "Khashman", "lat": 29.231, "lon": 47.879, "kind": "oil"},
-  {"id": "raudhatain", "name": "Raudhatain", "lat": 29.885, "lon": 47.753, "kind": "oil", "major": true, "label": [-2.05, -0.5, "right"]},
-  {"id": "sabriya", "name": "Sabriya", "lat": 29.822, "lon": 47.867, "kind": "oil", "label": [0.17, -0.13, "left"]},
-  {"id": "bahra", "name": "Bahra", "lat": 29.637, "lon": 47.937, "kind": "oil", "label": [0.17, -0.13, "left"]},
-  {"id": "ratqa", "name": "Ratqa (heavy oil)", "lat": 29.881, "lon": 47.434, "kind": "oil", "label": [-2.08, 0.1, "right"]},
-  {"id": "abdali", "name": "Abdali", "lat": 30.037, "lon": 47.798, "kind": "oil", "label": [0.16, -0.17, "left"]},
-  {"id": "minagish", "name": "Minagish", "lat": 29.017, "lon": 47.531, "kind": "oil", "major": true, "label": [-2.08, -0.15, "right"]},
-  {"id": "ummgudair", "name": "Umm Gudair", "lat": 28.866, "lon": 47.691, "kind": "oil", "label": [-2.08, -0.1, "right"]},
-  {"id": "abduliyah", "name": "Abduliyah", "lat": 29.084, "lon": 47.676, "kind": "oil"},
-  {"id": "dharif", "name": "Dharif", "lat": 29.207, "lon": 47.761, "kind": "oil"},
-  {"id": "kramaru", "name": "Kra Al-Maru", "lat": 29.378, "lon": 47.324, "kind": "oil", "label": [-2.08, -0.15, "right"]},
-  {"id": "wafra", "name": "Wafra", "lat": 28.589, "lon": 47.889, "kind": "oil", "label": [0.17, -0.13, "left"]},
-  {"id": "khafji", "name": "Khafji", "lat": 28.533, "lon": 48.917, "kind": "oil", "major": true, "label": [0.2, -0.13, "left"]},
-  {"id": "hout", "name": "Hout", "lat": 28.833, "lon": 48.917, "kind": "oil"},
-  {"id": "dorra", "name": "Dorra (gas)", "lat": 28.950, "lon": 49.117, "kind": "gas", "major": true, "label": [0.2, -0.13, "left"]},
-  {"id": "nokhatha", "name": "Al-Nokhatha (2024)", "lat": 29.416, "lon": 48.703, "kind": "oil", "label": [0.17, -0.13, "left"]},
-  {"id": "jlaiaa", "name": "Al-Jlaiaa (2025)", "lat": 28.824, "lon": 48.689, "kind": "oil"},
-  {"id": "kwcity", "name": "Kuwait City", "lat": 29.372, "lon": 47.976, "kind": "infra", "label": [0.15, -0.14, "left"]},
-  {"id": "ahmadi", "name": "Mina Al-Ahmadi", "lat": 29.067, "lon": 48.167, "kind": "infra"},
-  {"id": "abdullah", "name": "Mina Abdullah", "lat": 29.017, "lon": 48.167, "kind": "infra"},
-  {"id": "zour", "name": "Al-Zour", "lat": 28.733, "lon": 48.400, "kind": "infra", "label": [0.15, -0.14, "left"]}
+  {
+   "id": "burgan",
+   "name": "Greater Burgan",
+   "lat": 29.015,
+   "lon": 47.96,
+   "kind": "oil",
+   "major": true,
+   "label": [
+    0.13,
+    0.12,
+    "left"
+   ],
+   "zlabel": [
+    -0.975,
+    0.24,
+    "center"
+   ]
+  },
+  {
+   "id": "raudhatain",
+   "name": "Raudhatain",
+   "lat": 29.885,
+   "lon": 47.753,
+   "kind": "oil",
+   "major": true,
+   "label": [
+    -2.05,
+    -0.5,
+    "right"
+   ],
+   "zlabel": [
+    -2.2,
+    -0.17,
+    "right"
+   ],
+   "leader": [
+    -0.15,
+    -0.28,
+    -0.1,
+    -0.12
+   ]
+  },
+  {
+   "id": "sabriya",
+   "name": "Sabriya",
+   "lat": 29.822,
+   "lon": 47.875,
+   "kind": "oil",
+   "label": [
+    0.17,
+    -0.13,
+    "left"
+   ],
+   "zlabel": [
+    0.22,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "bahra",
+   "name": "Bahra",
+   "lat": 29.637,
+   "lon": 47.937,
+   "kind": "oil",
+   "label": [
+    0.17,
+    -0.13,
+    "left"
+   ],
+   "zlabel": [
+    0.2,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "ratqa",
+   "name": "Ratqa (heavy oil)",
+   "lat": 29.881,
+   "lon": 47.434,
+   "kind": "oil",
+   "label": [
+    -2.08,
+    0.1,
+    "right"
+   ],
+   "zlabel": [
+    -0.975,
+    0.17,
+    "center"
+   ]
+  },
+  {
+   "id": "abdali",
+   "name": "Abdali",
+   "lat": 30.037,
+   "lon": 47.798,
+   "kind": "oil",
+   "label": [
+    0.16,
+    -0.17,
+    "left"
+   ],
+   "zlabel": [
+    -2.12,
+    -0.32,
+    "right"
+   ]
+  },
+  {
+   "id": "minagish",
+   "name": "Minagish",
+   "lat": 29.017,
+   "lon": 47.531,
+   "kind": "oil",
+   "major": true,
+   "label": [
+    -2.08,
+    -0.3,
+    "right"
+   ],
+   "zlabel": [
+    -2.2,
+    -0.3,
+    "right"
+   ]
+  },
+  {
+   "id": "ummgudair",
+   "name": "Umm Gudair",
+   "lat": 28.866,
+   "lon": 47.691,
+   "kind": "oil",
+   "label": [
+    -2.08,
+    -0.1,
+    "right"
+   ],
+   "zlabel": [
+    0.2,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "abduliyah",
+   "name": "Abduliyah",
+   "lat": 29.084,
+   "lon": 47.676,
+   "kind": "oil",
+   "zlabel": [
+    0.2,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "dharif",
+   "name": "Dharif",
+   "lat": 29.207,
+   "lon": 47.761,
+   "kind": "oil",
+   "zlabel": [
+    -2.15,
+    -0.17,
+    "right"
+   ]
+  },
+  {
+   "id": "kramaru",
+   "name": "Kra Al-Maru",
+   "lat": 29.378,
+   "lon": 47.324,
+   "kind": "oil",
+   "label": [
+    -2.08,
+    -0.15,
+    "right"
+   ],
+   "zlabel": [
+    0.2,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "wafra",
+   "name": "Wafra",
+   "lat": 28.589,
+   "lon": 47.889,
+   "kind": "oil",
+   "label": [
+    0.17,
+    -0.13,
+    "left"
+   ],
+   "zlabel": [
+    0.2,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "khafji",
+   "name": "Khafji",
+   "lat": 28.533,
+   "lon": 48.917,
+   "kind": "oil",
+   "major": true,
+   "label": [
+    0.2,
+    -0.13,
+    "left"
+   ],
+   "zlabel": [
+    0.24,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "hout",
+   "name": "Hout",
+   "lat": 28.833,
+   "lon": 48.917,
+   "kind": "oil",
+   "zlabel": [
+    0.2,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "dorra",
+   "name": "Dorra (gas)",
+   "lat": 28.95,
+   "lon": 49.117,
+   "kind": "gas",
+   "major": true,
+   "label": [
+    0.2,
+    -0.13,
+    "left"
+   ],
+   "zlabel": [
+    -2.2,
+    -0.17,
+    "right"
+   ]
+  },
+  {
+   "id": "nokhatha",
+   "name": "Al-Nokhatha (2024)",
+   "lat": 29.416,
+   "lon": 48.703,
+   "kind": "oil",
+   "label": [
+    0.17,
+    -0.13,
+    "left"
+   ],
+   "zlabel": [
+    0.2,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "jlaiaa",
+   "name": "Al-Jlaiaa (2025)",
+   "lat": 28.824,
+   "lon": 48.689,
+   "kind": "oil",
+   "zlabel": [
+    -2.12,
+    -0.17,
+    "right"
+   ],
+   "zname": "Al-Jlaiaa"
+  },
+  {
+   "id": "kwcity",
+   "name": "Kuwait City",
+   "lat": 29.372,
+   "lon": 47.976,
+   "kind": "city",
+   "label": [
+    0.15,
+    -0.14,
+    "left"
+   ],
+   "zlabel": [
+    0.17,
+    -0.15,
+    "left"
+   ]
+  },
+  {
+   "id": "ahmadi",
+   "name": "Mina Al-Ahmadi",
+   "lat": 29.067,
+   "lon": 48.167,
+   "kind": "infra",
+   "zlabel": [
+    0.17,
+    -0.25,
+    "left"
+   ]
+  },
+  {
+   "id": "abdullah",
+   "name": "Mina Abdullah",
+   "lat": 29.0,
+   "lon": 48.167,
+   "kind": "infra",
+   "zlabel": [
+    0.17,
+    -0.02,
+    "left"
+   ],
+   "zoomOnly": true
+  },
+  {
+   "id": "zour",
+   "name": "Al-Zour",
+   "lat": 28.733,
+   "lon": 48.4,
+   "kind": "infra",
+   "label": [
+    -2.05,
+    -0.14,
+    "right"
+   ],
+   "zlabel": [
+    0.17,
+    -0.15,
+    "left"
+   ]
+  },
+  {
+   "id": "ummniqa",
+   "name": "Umm Niqa",
+   "lat": 29.99,
+   "lon": 47.875,
+   "kind": "gas",
+   "zoomOnly": true,
+   "zlabel": [
+    0.2,
+    -0.17,
+    "left"
+   ]
+  },
+  {
+   "id": "ahmaditown",
+   "name": "Ahmadi (KOC HQ)",
+   "lat": 29.077,
+   "lon": 48.084,
+   "kind": "city",
+   "zoomOnly": true,
+   "zlabel": [
+    -0.975,
+    -0.5,
+    "center"
+   ]
+  }
  ],
  "regions": [
-  {"name": "South & East Kuwait", "color": "oil",
-   "fields": "Greater Burgan (Burgan, Magwa, Ahmadi), Khashman",
-   "detail": "World's second-largest oil field; Burgan and Wara sandstones"},
-  {"name": "North Kuwait", "color": "oil",
+  {
+   "name": "South & East Kuwait",
+   "color": "oil",
+   "fields": "Greater Burgan (Burgan, Magwa, Ahmadi); Al-Zour",
+   "detail": "World's second-largest oil field; Burgan and Wara sandstones"
+  },
+  {
+   "name": "North Kuwait",
+   "color": "oil",
    "fields": "Raudhatain, Sabriya, Bahra, Ratqa, Abdali, Umm Niqa",
-   "detail": "Cretaceous oil, deep Jurassic gas and Lower Fars heavy oil"},
-  {"name": "West Kuwait", "color": "oil",
+   "detail": "Cretaceous oil, deep Jurassic gas and Lower Fars heavy oil"
+  },
+  {
+   "name": "West Kuwait",
+   "color": "oil",
    "fields": "Minagish, Umm Gudair, Abduliyah, Dharif, Kra Al-Maru",
-   "detail": "Minagish Oolite and Ratawi reservoirs; 22–26° API oil"},
-  {"name": "Partitioned Zone & offshore", "color": "gas",
+   "detail": "Minagish Oolite and Ratawi reservoirs; 22–26° API oil"
+  },
+  {
+   "name": "Partitioned Zone & offshore",
+   "color": "oil",
    "fields": "Wafra, Khafji, Hout, Dorra gas; new: Al-Nokhatha, Al-Jlaiaa",
-   "detail": "Shared 50:50 with Saudi Arabia; offshore finds since 2024"}
+   "detail": "Shared 50:50 with Saudi Arabia; offshore finds since 2024"
+  }
  ],
- "notes_map": "Kuwait's fields fall into four areas. South and East Kuwait is dominated by Greater Burgan (Burgan, Magwa and Ahmadi), the world's second-largest oil field after Ghawar, covering about 820 square kilometres; it has produced about half of Kuwait's output (EIA 2013). North Kuwait has Raudhatain and Sabriya, the deep Jurassic gas and light-oil fields served by the Jurassic Production Facilities, and Ratqa, where heavy oil is produced from the shallow Lower Fars sands with steam. West Kuwait has Minagish and Umm Gudair, which produce from the Minagish Oolite. The Partitioned Zone is shared 50:50 with Saudi Arabia: Wafra onshore and Khafji and Hout offshore, plus the Dorra gas field, which Iran also claims. Since 2024 KOC has announced offshore discoveries at Al-Nokhatha (about 3.2 billion barrels of oil equivalent) and Al-Jlaiaa. Click a region on the right to show its fields. Field positions were taken from the KOC fields map and the Horn giant-field database and are approximate.",
- "notes_regions": "In 1990, before the invasion, South and East Kuwait supplied about two-thirds of KOC's output, North Kuwait about a quarter and West Kuwait under a tenth (U.S. DoD). The Partitioned Zone fields were shut in from 2014-2015 to 2020; in 2024 Khafji produced about 128,000 b/d and Wafra about 78,000 b/d. The new offshore discoveries announced in 2024-2025 (Al-Nokhatha, Al-Jlaiaa and the Al-Jazah gas-condensate find) add an estimated 4.5 billion barrels of oil equivalent, according to KPC/KOC announcements."
+ "notes_map": "Kuwait's fields fall into four areas. South and East Kuwait is dominated by Greater Burgan (Burgan, Magwa and Ahmadi), the world's second-largest oil field after Ghawar, covering roughly 800 square kilometres; in 2013 it still produced about half of Kuwait's oil (EIA, 2013). North Kuwait has Raudhatain and Sabriya, the deep Jurassic gas and light-oil fields served by the Jurassic Production Facilities, and Ratqa, where heavy oil is produced from the shallow Lower Fars sands with steam. West Kuwait has Minagish and Umm Gudair, which produce from the Minagish Oolite. The Partitioned Zone is shared 50:50 with Saudi Arabia: Wafra onshore and Khafji and Hout offshore, plus the Dorra gas field, which Iran also claims. Since 2024 KOC has announced offshore discoveries at Al-Nokhatha (about 3.2 billion barrels of oil equivalent) and Al-Jlaiaa. Click an area on the right to zoom in. Field positions were taken from the KOC fields map and the Horn giant-field database and are approximate.",
+ "notes_regions": "In 1990 Greater Burgan supplied about two-thirds of KOC's output (Office of the Special Assistant for Gulf War Illnesses, 2000), and in 2013 it still produced about half of Kuwait's oil (EIA, 2013). North Kuwait holds Raudhatain and Sabriya and the deep Jurassic gas and light-oil play; West Kuwait holds Minagish and Umm Gudair. The Partitioned Zone, shared 50:50 with Saudi Arabia, contains Wafra onshore and Khafji and Hout offshore. Offshore discoveries since 2024 include Al-Nokhatha, about 3.2 billion barrels of oil equivalent (KUNA, 2024), and Al-Jlaiaa (Offshore Engineer, 2025). Click a card to zoom into an area.",
+ "zoom": [
+  {
+   "id": "zoom_se",
+   "short": "South & East",
+   "name": "South & East Kuwait",
+   "bbox": [
+    47.62,
+    48.52,
+    28.65,
+    29.43
+   ],
+   "fields": [
+    "burgan",
+    "kwcity",
+    "ahmaditown",
+    "ahmadi",
+    "abdullah",
+    "zour"
+   ],
+   "rows": [
+    [
+     "Greater Burgan",
+     "1938 · the world's second-largest oil field"
+    ],
+    [
+     "Magwa and Ahmadi",
+     "1950–52 · same Burgan and Wara sandstones"
+    ],
+    [
+     "Mina Al-Ahmadi · Mina Abdullah",
+     "refineries and crude export terminals"
+    ],
+    [
+     "Al-Zour",
+     "615 kb/d refinery and LNG import terminal"
+    ]
+   ]
+  },
+  {
+   "id": "zoom_north",
+   "short": "North",
+   "name": "North Kuwait",
+   "bbox": [
+    47.15,
+    48.1,
+    29.48,
+    30.15
+   ],
+   "fields": [
+    "raudhatain",
+    "sabriya",
+    "bahra",
+    "ratqa",
+    "abdali",
+    "ummniqa"
+   ],
+   "rows": [
+    [
+     "Raudhatain",
+     "1955 · Ratawi, Zubair, Burgan, Mauddud"
+    ],
+    [
+     "Sabriya",
+     "1956–57 · Mauddud, Burgan; deep Marrat gas"
+    ],
+    [
+     "Bahra",
+     "1956 · Mauddud and Zubair"
+    ],
+    [
+     "Ratqa",
+     "1977–80 · Lower Fars heavy oil, produced with steam"
+    ],
+    [
+     "Abdali",
+     "1990 · oil, on the Iraqi border"
+    ],
+    [
+     "Umm Niqa",
+     "part of the deep Jurassic gas play"
+    ]
+   ]
+  },
+  {
+   "id": "zoom_west",
+   "short": "West",
+   "name": "West Kuwait",
+   "bbox": [
+    47.05,
+    47.95,
+    28.72,
+    29.5
+   ],
+   "fields": [
+    "minagish",
+    "ummgudair",
+    "abduliyah",
+    "dharif",
+    "kramaru"
+   ],
+   "rows": [
+    [
+     "Minagish",
+     "1959 · Minagish Oolite, 22–26° API oil"
+    ],
+    [
+     "Umm Gudair",
+     "1962 · Minagish Oolite and Ratawi"
+    ],
+    [
+     "Abduliyah",
+     "smaller West Kuwait oil field"
+    ],
+    [
+     "Dharif",
+     "smaller West Kuwait oil field"
+    ],
+    [
+     "Kra Al-Maru",
+     "1995 · Ratawi; Jurassic light oil"
+    ]
+   ]
+  },
+  {
+   "id": "zoom_pz",
+   "short": "PZ & offshore",
+   "name": "Partitioned Zone & offshore",
+   "bbox": [
+    47.75,
+    49.25,
+    28.35,
+    29.55
+   ],
+   "fields": [
+    "wafra",
+    "khafji",
+    "hout",
+    "dorra",
+    "nokhatha",
+    "jlaiaa",
+    "zour"
+   ],
+   "rows": [
+    [
+     "Wafra",
+     "1953 · onshore, shared with Saudi Arabia"
+    ],
+    [
+     "Khafji",
+     "1959–60 · offshore, shared, medium-sour"
+    ],
+    [
+     "Hout",
+     "1963 · offshore, shared"
+    ],
+    [
+     "Dorra",
+     "1967 · gas field; Iran claims part of it"
+    ],
+    [
+     "Al-Nokhatha",
+     "2024 offshore find · ≈ 3.2 bn boe"
+    ],
+    [
+     "Al-Jlaiaa",
+     "2025 offshore find in Kuwaiti waters"
+    ]
+   ]
+  }
+ ]
 }

@@ -1,51 +1,250 @@
 {
- "dest_value_2024": {"source": "OEC (2024 data, BACI/UN Comtrade), crude petroleum by value",
-   "labels": ["China", "South Korea", "Japan", "Taiwan", "India", "Others"],
-   "values": [33.4, 23.1, 16.9, 10.8, 10.7, 5.2], "total_bn": 28.8},
- "dest_volume_2024": {"source": "Energy Institute Statistical Review 2025, inter-area crude movements",
-   "labels": ["China", "Japan", "India", "Other Asia-Pacific", "Middle East", "United States", "Europe & Africa"],
-   "values": [26.6, 13.5, 10.0, 43.0, 4.6, 1.8, 0.6], "asia": 93.1},
- "exports_kbd": {"source": "JODI-Oil World Database (annual averages of monthly data)",
-   "years": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
-   "crude": [2009, 2053, 1998, 1816, 1744, 1879, 1568, 1176, 1330],
-   "products": [636, 626, 585, 527, 604, 711, 964, 1196, 1071]},
- "brent_annual": {"source": "EIA Europe Brent spot price FOB, annual average of daily prices",
-   "years": [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
-   "values": [28.76, 24.51, 25.14, 29.0, 38.78, 54.9, 65.25, 72.61, 96.94, 61.74, 79.61, 111.26, 111.57, 108.56, 99.02, 52.32, 43.64, 54.12, 71.34, 64.3, 41.96, 70.86, 100.93, 82.49, 80.52, 69.14],
-   "ytd_2026": 93.03},
- "kec": {"2023": 84.26, "2024": 80.65, "orb_2023": 82.95, "orb_2024": 79.89, "source": "OPEC Annual Report 2024"},
- "y2026": {"months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-   "crude_exports": [1254, 1213, 500, 41, 24, 1060, 1129],
-   "brent": [66.6, 70.9, 103.1, 117.3, 107.1, 85.4, 83.8]},
- "lng_2024": {"bcm": 9.73, "mt": 7.15, "share_of_use": 39.5,
-   "labels": ["Qatar", "Nigeria", "United States", "Angola", "Oman", "Russia", "Others"],
-   "values": [61.4, 16.6, 9.5, 3.7, 3.0, 3.0, 2.9], "jkm_2024": 11.91, "jkm_2022": 33.98},
+ "dest_value_2024": {
+  "source": "OEC (2024 data, BACI/UN Comtrade), crude petroleum by value",
+  "labels": [
+   "China",
+   "South Korea",
+   "Japan",
+   "Taiwan",
+   "India",
+   "Others"
+  ],
+  "values": [
+   33.4,
+   23.1,
+   16.9,
+   10.8,
+   10.7,
+   5.2
+  ],
+  "total_bn": 28.8
+ },
+ "dest_volume_2024": {
+  "source": "Energy Institute Statistical Review 2025, inter-area crude movements",
+  "labels": [
+   "China",
+   "Japan",
+   "India",
+   "Other Asia-Pacific",
+   "Middle East",
+   "United States",
+   "Europe & Africa"
+  ],
+  "values": [
+   26.6,
+   13.5,
+   10.0,
+   43.0,
+   4.6,
+   1.8,
+   0.6
+  ],
+  "asia": 93.1
+ },
+ "exports_kbd": {
+  "source": "JODI-Oil World Database (annual averages of monthly data)",
+  "years": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "crude": [
+   2009,
+   2053,
+   1998,
+   1816,
+   1744,
+   1879,
+   1568,
+   1176,
+   1330
+  ],
+  "products": [
+   636,
+   626,
+   585,
+   527,
+   604,
+   711,
+   964,
+   1196,
+   1071
+  ]
+ },
+ "brent_annual": {
+  "source": "EIA Europe Brent spot price FOB, annual average of daily prices",
+  "years": [
+   2000,
+   2001,
+   2002,
+   2003,
+   2004,
+   2005,
+   2006,
+   2007,
+   2008,
+   2009,
+   2010,
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "values": [
+   28.76,
+   24.51,
+   25.14,
+   29.0,
+   38.78,
+   54.9,
+   65.25,
+   72.61,
+   96.94,
+   61.74,
+   79.61,
+   111.26,
+   111.57,
+   108.56,
+   99.02,
+   52.32,
+   43.64,
+   54.12,
+   71.34,
+   64.3,
+   41.96,
+   70.86,
+   100.93,
+   82.49,
+   80.52,
+   69.14
+  ],
+  "ytd_2026": 93.03
+ },
+ "kec": {
+  "2023": 84.26,
+  "2024": 80.65,
+  "orb_2023": 82.95,
+  "orb_2024": 79.89,
+  "source": "OPEC Annual Report 2024"
+ },
+ "y2026": {
+  "months": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "May",
+   "Jun",
+   "Jul"
+  ],
+  "crude_exports": [
+   1254,
+   1213,
+   500,
+   41,
+   24,
+   1060,
+   1129
+  ],
+  "brent": [
+   66.6,
+   70.9,
+   103.1,
+   117.3,
+   107.1,
+   85.4,
+   83.8
+  ]
+ },
+ "lng_2024": {
+  "bcm": 9.73,
+  "mt": 7.15,
+  "share_of_use": 39.5,
+  "labels": [
+   "Qatar",
+   "Nigeria",
+   "United States",
+   "Angola",
+   "Oman",
+   "Russia",
+   "Others"
+  ],
+  "values": [
+   61.4,
+   16.6,
+   9.5,
+   3.7,
+   3.0,
+   3.0,
+   2.9
+  ],
+  "jkm_2024": 11.91,
+  "jkm_2022": 33.98
+ },
  "takeaways": [
-  ["TbBarrel", "FF9F0A", "Vast, low-cost oil", "101.5 bn barrels (6.5% of the world) at one of the lowest costs per barrel"],
-  ["TbFlame", "64D2FF", "A growing gas gap", "About 40% of the gas Kuwait uses is imported LNG, mostly from Qatar"],
-  ["TbBuildingFactory", "FF9F0A", "From crude to products", "Al-Zour lifted refining to 1.4 mb/d; in 2024 product exports beat crude"],
-  ["TbWorld", "FF9F0A", "Asia-bound via Hormuz", "93% of crude goes to Asia, and every export cargo must pass Hormuz"]
+  [
+   "TbBarrel",
+   "FF9F0A",
+   "Vast, low-cost oil",
+   "101.5 billion barrels (6.5% of the world) at one of the lowest costs per barrel"
+  ],
+  [
+   "TbFlame",
+   "64D2FF",
+   "A growing gas gap",
+   "About 40% of the gas Kuwait uses is imported LNG, mostly from Qatar"
+  ],
+  [
+   "TbBuildingFactory",
+   "FF9F0A",
+   "From crude to products",
+   "Al-Zour and the Clean Fuels Project lifted refining to 1.4 million b/d; in 2024 product exports beat crude"
+  ],
+  [
+   "TbWorld",
+   "FF9F0A",
+   "Asia-bound via Hormuz",
+   "93% of crude goes to Asia, and every export cargo must pass Hormuz"
+  ]
  ],
- "next": "KPC targets 4 million b/d of capacity by 2035, plus offshore discoveries and more non-associated gas.",
- "notes_takeaways": "To conclude: Kuwait has one of the world's largest and cheapest oil resource bases, but it depends on oil for more than 90% of its exports and income. Its gas is mostly associated with oil, so it now imports about 40% of its gas as LNG. The Al-Zour refinery and the Clean Fuels Project have turned Kuwait into a large exporter of refined products. Its customers are overwhelmingly Asian, and the 2026 Hormuz disruption showed how exposed a Gulf-only export route is. Looking ahead, KPC's strategy targets 4 million b/d of production capacity by 2035, development of the new offshore discoveries, and more non-associated Jurassic gas.",
+ "next": "KPC targets 4 million b/d of crude capacity by 2035 (JPT, n.d.), plus new offshore fields and more gas.",
+ "notes_takeaways": "To conclude: Kuwait has one of the world's largest and cheapest oil resource bases, but fuels make up more than 90% of its exports and oil provides most of its state revenue. Its gas is mostly associated with oil, so it now imports about 40% of its gas as LNG. The Al-Zour refinery and the Clean Fuels Project have turned Kuwait into a large exporter of refined products. Its customers are overwhelmingly Asian, and the 2026 Hormuz disruption showed how exposed a Gulf-only export route is. Looking ahead, KPC's strategy targets 4 million b/d of crude production capacity by 2035 (JPT), development of the new offshore discoveries, and more non-associated Jurassic gas.",
  "refs_slide": [
-  "Energy Institute. (2025). Statistical review of world energy 2025 (74th ed.).",
-  "JODI. (2026). JODI-Oil world database [Data set].",
-  "OPEC. (2025). Annual statistical bulletin 2025 (60th ed.).",
-  "OPEC. (2026). Annual statistical bulletin 2026 (61st ed.).",
-  "OPEC. (2025). Annual report 2024.",
-  "U.S. EIA. (2023). Country analysis brief: Kuwait.",
-  "U.S. EIA. (2023). Kuwait's oil exports shift from crude oil to petroleum products.",
-  "U.S. EIA. (2026). Europe Brent spot price FOB [Data set].",
-  "Kuwait Oil Company. (n.d.). Brief history of KOC; Oil fires.",
-  "Kuwait Petroleum Corporation. (n.d.). Oil history.",
-  "KNPC. (n.d.). Refineries; KIPIC. (2024). Al-Zour refinery.",
+  "CNBC. (2026, March 7). Kuwait cuts oil production as Strait of Hormuz closure disrupts global energy market.",
+  "Encyclopaedia Britannica. (n.d.-b). Kuwait: Resources and power.",
+  "Energy Institute. (2025). Statistical review of world energy 2025 (74th ed.) [Data set].",
+  "Horn, M. K. (2014). Giant oil and gas fields of the world [Data set].",
+  "Joint Organisations Data Initiative. (2026). JODI-Oil world database [Data set].",
+  "Kuwait Integrated Petroleum Industries Company. (2024). His Highness the Amir of Kuwait inaugurates full operation of Al-Zour Refinery [Press release].",
+  "Kuwait National Petroleum Company. (n.d.-a). KNPC timeline.",
+  "Kuwait Oil Company. (n.d.-a). Brief history of KOC.",
+  "Kuwait Oil Company. (n.d.-b). Oil fires.",
+  "Kuwait Petroleum Corporation. (n.d.-a). Kuwaiti oil fields [Map].",
   "Naqi, M., Alsalem, O., & Qabazard, S. (2023). Petroleum geology of Kuwait. In The geology of Kuwait. Springer.",
-  "U.S. Department of Defense. (1998, 2000). Environmental exposure report: Oil well fires. GulfLINK.",
-  "Encyclopaedia Britannica. (n.d.). Kuwait: Resources and power.",
-  "S&P Global Commodity Insights. (2018–2024). Kuwait crude and refinery reports.",
-  "OEC. (2026). Crude petroleum in Kuwait trade (2024 data).",
-  "Reuters. (2026). Kuwait declares force majeure, cuts crude output (via CNBC).",
-  "Natural Earth. (n.d.). 1:10m Admin 0 countries [Data set]."
+  "Observatory of Economic Complexity. (n.d.). Crude petroleum in Kuwait trade [2024 data].",
+  "Office of the Special Assistant for Gulf War Illnesses. (2000). Environmental exposure report: Oil well fires.",
+  "Organization of the Petroleum Exporting Countries. (2025a). Annual report 2024.",
+  "Organization of the Petroleum Exporting Countries. (2025b). Annual statistical bulletin 2025 (60th ed.).",
+  "Organization of the Petroleum Exporting Countries. (2026a). Annual statistical bulletin 2026 (61st ed.).",
+  "U.S. Energy Information Administration. (2023a). Country analysis brief: Kuwait.",
+  "U.S. Energy Information Administration. (2026). Europe Brent spot price FOB [Data set].",
+  "Wall Street Journal. (2016, April 15). Barrel breakdown [Rystad Energy data]."
  ]
 }

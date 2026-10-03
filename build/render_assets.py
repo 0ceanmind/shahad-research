@@ -131,3 +131,35 @@ def depth_arrow(name="depth_arrow.png", W=90, H=1320):
 if __name__ == "__main__":
     api_scale()
     depth_arrow()
+
+
+def orb(name, color, size=700, power=1.6, peak=0.55):
+    """Soft radial light (alpha falloff) used as a drifting ambient glow."""
+    ys, xs = np.mgrid[0:size, 0:size].astype(np.float32)
+    r = np.sqrt((xs - size / 2) ** 2 + (ys - size / 2) ** 2) / (size / 2)
+    a = np.clip(1 - r, 0, 1) ** power * peak
+    img = np.zeros((size, size, 4), np.uint8)
+    img[..., 0], img[..., 1], img[..., 2] = color
+    img[..., 3] = (a * 255).astype(np.uint8)
+    Image.fromarray(img, "RGBA").save(os.path.join(OUT, name))
+
+
+def base_bg(name="bg_base.jpg", W=3840, H=2160):
+    """Near-black canvas with a faint vignette and dither, so ambient orbs carry the colour."""
+    ys, xs = np.mgrid[0:H, 0:W].astype(np.float32)
+    d = ((xs / W - 0.5) / 0.75) ** 2 + ((ys / H - 0.45) / 0.75) ** 2
+    v = 13 - 5 * np.clip(d, 0, 1)
+    img = np.dstack([v - 1, v - 1, v + 2]) + np.random.default_rng(3).normal(0, 1.6, (H, W, 3))
+    Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).save(os.path.join(OUT, name), quality=92)
+
+
+def ambient_assets():
+    orb("orb_amber.png", (255, 128, 10))
+    orb("orb_gold.png", (255, 190, 60), peak=0.42)
+    orb("orb_blue.png", (40, 120, 255), peak=0.5)
+    orb("orb_red.png", (255, 60, 20), peak=0.6)
+    base_bg()
+
+
+if __name__ == "__main__":
+    ambient_assets()

@@ -37,6 +37,7 @@ def edge_mask(Wp, Hp, f=0.16):
 
 
 def render(name, land, land_edge, neigh, neigh_edge, scale=900, ss=3, glow=None):
+    """scale = pixels per map unit (degrees of latitude)."""
     wu, hu, Wp, Hp = frame(scale)
     s = scale * ss
     gj = json.load(open(GEO))
@@ -48,7 +49,7 @@ def render(name, land, land_edge, neigh, neigh_edge, scale=900, ss=3, glow=None)
         for poly in polys(feats[nm]):
             pts = [proj(x, y, s) for x, y in poly[0]]
             d.polygon(pts, fill=neigh)
-            d.line(pts + [pts[0]], fill=neigh_edge, width=int(1.2 * ss))
+            d.line(pts + [pts[0]], fill=neigh_edge, width=max(1, int(1.2 * ss * scale / 900)))
     nb = nb.resize((Wp, Hp), Image.LANCZOS)
     arr = np.array(nb).astype(np.float32)
     arr[..., 3] *= edge_mask(Wp, Hp)
@@ -61,7 +62,7 @@ def render(name, land, land_edge, neigh, neigh_edge, scale=900, ss=3, glow=None)
         gd = ImageDraw.Draw(gl)
         for pts in kw:
             gd.polygon(pts, fill=255)
-        gl = gl.filter(ImageFilter.GaussianBlur(18 * ss))
+        gl = gl.filter(ImageFilter.GaussianBlur(18 * ss * scale / 900))
         a = (np.array(gl).astype(np.float32) * glow[3] / 255).astype(np.uint8)
         layer = np.zeros((big.size[1], big.size[0], 4), np.uint8)
         layer[..., 0], layer[..., 1], layer[..., 2], layer[..., 3] = glow[0], glow[1], glow[2], a
@@ -69,7 +70,7 @@ def render(name, land, land_edge, neigh, neigh_edge, scale=900, ss=3, glow=None)
     d = ImageDraw.Draw(big)
     for pts in kw:
         d.polygon(pts, fill=land)
-        d.line(pts + [pts[0]], fill=land_edge, width=int(2.2 * ss), joint="curve")
+        d.line(pts + [pts[0]], fill=land_edge, width=max(2, int(2.2 * ss * scale / 900)), joint="curve")
     img = Image.alpha_composite(img, big.resize((Wp, Hp), Image.LANCZOS))
     img.save(os.path.join(OUT, name))
     return wu, hu, Wp, Hp
@@ -78,6 +79,6 @@ def render(name, land, land_edge, neigh, neigh_edge, scale=900, ss=3, glow=None)
 if __name__ == "__main__":
     wu, hu, Wp, Hp = render("map_dark.png", land=(30, 30, 33, 255), land_edge=(120, 120, 128, 255),
                             neigh=(22, 22, 25, 255), neigh_edge=(52, 52, 56, 255),
-                            glow=(255, 140, 20, 60))
+                            glow=(255, 140, 20, 60), scale=1800, ss=2)
     json.dump(dict(EXT, klat=KLAT, wu=wu, hu=hu, px=[Wp, Hp]), open(os.path.join(OUT, "map_frame.json"), "w"), indent=1)
     print("map", Wp, Hp, round(wu / hu, 3))

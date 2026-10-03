@@ -1,0 +1,33 @@
+ 1  title         Kuwait
+ 2  contents      The story in five chapters
+ 3  glance        A small country with a giant reservoir
+ 4  sec1          History &amp; Types
+ 5  timeline      Ninety years in nine moments
+ 6  fires         When the desert burned
+ 7  crudes        Four crudes on one scale
+ 8  gastypes      Gas: mostly a by-product of oil
+ 9  sec2          Resources &amp; Growth
+10  reserves      Seventh-largest oil reserves on Earth
+11  production    Eight decades of output
+12  gasbalance    Burning more gas than it produces
+13  chain         One state company, the whole chain
+14  refining      Refining capacity more than doubled
+15  sec3          Reservoir Locations
+16  map           Kuwait’s oil and gas map
+17  zoom_se       (hidden) South &amp; East Kuwait
+18  zoom_north    (hidden) North Kuwait
+19  zoom_west     (hidden) West Kuwait
+20  zoom_pz       (hidden) Partitioned Zone &amp; offshore
+21  maphub        (hidden) Kuwait’s oil and gas map
+22  regions       Four producing areas
+23  strata        Reservoirs from shallow to deep
+24  sec4          Exports &amp; Costs
+25  destinations  Nine in ten barrels sail to Asia
+26  crudeproducts Exporting fuels, not just crude
+27  prices        The price of a barrel, 2000–2025
+28  cost          One of the cheapest barrels on Earth
+29  lng           Where Kuwait’s LNG comes from
+30  hormuz        When the Strait of Hormuz closed
+31  takeaways     What the numbers say
+32  refs          Key sources
+33  thanks        Thank you

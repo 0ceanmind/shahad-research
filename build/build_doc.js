@@ -95,12 +95,12 @@ async function bodyContent() {
     ["2010", "101.5", "bp (2021)"], ["2020", "101.5", "bp (2021)"], ["2024", "101.5", "OPEC (2025b)"], ["2025", "101.5", "OPEC (2026a)"],
   ], [2, 2.5, 4.5], "Includes half of the Saudi–Kuwaiti Partitioned Zone.", { align: [C, C, null] }));
   add(H2("3.2 Crude oil production"));
-  add(P("Figure 2 shows eight decades of production. Output rose rapidly from 16 kb/d in 1946 to an all-time peak of 3.34 mb/d in 1972. It then fell after nationalisation, a conservation policy and the collapse of oil prices in the 1980s, reaching about 1.1 mb/d in 1985. The 1990–1991 invasion reduced output to only 185 kb/d in 1991. After reconstruction, production returned to 2.1 mb/d by 1995 and reached 3.15 mb/d (including natural gas liquids) in 2016 (Energy Institute, 2025). Since 2017 Kuwait's output has been governed by OPEC+ agreements: crude oil production alone averaged 2.41 mb/d in 2024 (JODI, 2026), and Kuwait's OPEC+ required production for September and October 2026 was 2,676 kb/d (OPEC, 2026b). The oil minister put Kuwait's production capacity at 3.2 mb/d in September 2025 (MEES, 2025b)."));
+  add(P("Figure 2 shows eight decades of production. Output rose rapidly from 16 kb/d in 1946 to an all-time peak of 3.34 mb/d in 1972. It then fell after nationalisation, a conservation policy and the collapse of oil prices in the 1980s, reaching about 1.1 mb/d in 1985. The 1990–1991 invasion reduced output to only 185 kb/d in 1991. After reconstruction, production returned to 2.1 mb/d by 1995 and reached an estimated post-war high of about 3.2 mb/d (including natural gas liquids; derived from Energy Institute energy data) in 2012 and 3.15 mb/d in 2016 (Energy Institute, 2025). Since 2017 Kuwait's output has been governed by OPEC+ agreements: crude oil production alone averaged 2.41 mb/d in 2024 (JODI, 2026), and Kuwait's OPEC+ required production for September and October 2026 was 2,676 kb/d (OPEC, 2026b). The oil minister put Kuwait's production capacity at 3.2 mb/d in September 2025 (MEES, 2025b)."));
   add(await figure(FIG("fig_production.png"), "Kuwait's Oil Production, 1946–2024", "Total oil including natural gas liquids, Energy Institute (2025). Values for years not quoted directly by the Energy Institute were derived from its energy-content data; 1946–1955 values are from company records (KPC, n.d.-b). 2024 is an estimate (≈2.73 mb/d)."));
   add(table("Selected Production Statistics", ["Year", "Total oil (kb/d)", "Note"], [
     ["1946", "16", "First exports (company records)"], ["1950", "344", "Company records"], ["1972", "3,339", "All-time peak"],
     ["1980", "1,757", "After nationalisation"], ["1985", "1,127", "1980s price collapse"], ["1991", "185", "Invasion and well fires"],
-    ["1995", "2,130", "Post-war recovery"], ["2016", "3,150", "Post-war high"], ["2020", "2,721", "COVID-19, OPEC+ cuts"],
+    ["1995", "2,130", "Post-war recovery"], ["2012", "≈3,190", "Post-war high (estimate)"], ["2020", "2,721", "COVID-19, OPEC+ cuts"],
     ["2023", "2,910", ""], ["2024", "≈2,730", "Estimate; crude only = 2,411 kb/d (JODI)"],
   ], [1.4, 2.0, 5.6], "Energy Institute (2025) unless stated.", { align: [C, C, null] }));
   add(H2("3.3 Natural gas production, consumption and LNG imports"));
@@ -343,21 +343,21 @@ async function main() {
     : path.join(__dirname, "assets", "logo_placeholder.png");
   const sharp = require("sharp");
   const lm = await sharp(logoFile).metadata();
-  const lh = 1.45 * 96, lw = lh * lm.width / lm.height;
+  const lw = 3.7 * 96, lh = lw * lm.height / lm.width;
   const coverLine = (t, size, o = {}) => new Paragraph({ alignment: C, spacing: { after: o.after ?? 120, before: o.before ?? 0 },
     children: [new TextRun({ text: t, size, font: "Arial", bold: !!o.bold, color: o.color || COL.ink, italics: !!o.italics })] });
   const rule = new Paragraph({ alignment: C, spacing: { before: 200, after: 200 }, border: { bottom: { style: BorderStyle.SINGLE, size: 12, color: COL.accent, space: 1 } }, children: [] });
   const cover = [
-    new Paragraph({ alignment: C, spacing: { before: 400, after: 300 }, children: [new ImageRun({ type: "png", data: fs.readFileSync(logoFile),
-      transformation: { width: Math.round(lw), height: Math.round(lh) }, altText: { title: "UTAS logo", description: "University logo", name: "logo" } })] }),
-    coverLine("University of Technology and Applied Sciences", 30, { bold: true, after: 80 }),
-    coverLine("EGCH2230 – Petroleum and Petrochemical Processing", 24, { color: COL.muted, after: 600 }),
+    new Paragraph({ alignment: C, spacing: { before: 1300, after: 420 }, children: [new ImageRun({ type: "png", data: fs.readFileSync(logoFile),
+      transformation: { width: Math.round(lw), height: Math.round(lh) }, altText: { title: "UTAS Salalah logo", description: "University of Technology and Applied Sciences, Salalah", name: "logo" } })] }),
+    coverLine("University of Technology and Applied Sciences – Salalah", 28, { bold: true, after: 80 }),
+    coverLine("EGCH2230 – Petroleum and Petrochemical Processing", 24, { color: COL.muted, after: 1500 }),
     coverLine("RESEARCH REPORT", 22, { bold: true, color: COL.accent, after: 200 }),
     coverLine("Kuwait's Oil and Gas Industry", 48, { bold: true, after: 120 }),
     coverLine("History, Resources, Reservoir Locations, Export Markets and Costs", 28, { color: COL.muted, after: 200 }),
     rule,
-    coverLine("Prepared by", 22, { color: COL.muted, before: 600, after: 60 }),
-    coverLine("Shahad Issa Obaid Alghriabi", 32, { bold: true, after: 600 }),
+    coverLine("Prepared by", 22, { color: COL.muted, before: 1300, after: 60 }),
+    coverLine("Shahad Issa Obaid Alghriabi", 32, { bold: true, after: 1500 }),
     coverLine("October 2026", 22, { color: COL.muted }),
   ];
 

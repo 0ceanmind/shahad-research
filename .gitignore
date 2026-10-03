@@ -4,3 +4,8 @@ build/out/
 slide-*.jpg
 page-*.jpg
 __pycache__/
+build/qa/png/
+build/qa/png*_sheet-*.jpg
+build/qa/tmp/
+build/qa/__pycache__/
+build/qa/report_*.png
