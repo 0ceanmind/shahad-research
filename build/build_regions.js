@@ -27,14 +27,25 @@ function zoomBox(bbox) {
 const inView = (x, y, pad = 0.12) => x > VIEW.x + pad && x < VIEW.x + VIEW.w - pad && y > VIEW.y + pad && y < VIEW.y + VIEW.h - pad;
 const colorOf = (f) => (f.kind === "gas" ? HEX.gas : f.kind === "infra" || f.kind === "city" ? HEX.text : HEX.oil);
 // field = disc, refinery/port = diamond, town = ring
-function marker(K, pres, s, f, x, y, d, col, glowSize) {
-  const name = `!!f_${f.id}`;
-  if (f.kind === "infra") return K.shape(s, pres.shapes.RECTANGLE, { x: x - d / 2, y: y - d / 2, w: d, h: d, fill: { color: col }, rotate: 45, name });
+// ghost = fully transparent twin: lets Morph slide off-view markers out with the map instead of fading them in place
+function marker(K, pres, s, f, x, y, d, col, glowSize, ghost = false) {
+  const name = `!!f_${f.id}`, tr = ghost ? 100 : 0;
+  if (f.kind === "infra") return K.shape(s, pres.shapes.RECTANGLE, { x: x - d / 2, y: y - d / 2, w: d, h: d, fill: { color: col, transparency: tr }, rotate: 45, name });
   if (f.kind === "city") return K.shape(s, pres.shapes.OVAL, { x: x - d / 2, y: y - d / 2, w: d, h: d, fill: { color: "000000", transparency: 100 },
-    line: { color: col, width: 1.75 }, name });
-  return K.shape(s, pres.shapes.OVAL, { x: x - d / 2, y: y - d / 2, w: d, h: d, fill: { color: col },
-    shadow: glowSize ? K.glow(col, glowSize, 0.9) : undefined, name });
+    line: { color: col, width: 1.75, transparency: tr }, name });
+  return K.shape(s, pres.shapes.OVAL, { x: x - d / 2, y: y - d / 2, w: d, h: d, fill: { color: col, transparency: tr },
+    shadow: glowSize && !ghost ? K.glow(col, glowSize, 0.9) : undefined, name });
 }
+// click areas over the map (lon0, lon1, lat0, lat1), one or two rectangles per zoom area, not overlapping
+const HIT = [
+  [[47.75, 48.35, 28.75, 29.5]],
+  [[46.6, 48.3, 29.5, 30.25]],
+  [[46.6, 47.75, 28.45, 29.5]],
+  [[47.75, 48.6, 28.4, 28.75], [48.35, 49.75, 28.4, 29.62]],
+];
+const COUNTRY = [["IRAQ", 46.75, 30.17, "!!c_iraq"], ["SAUDI ARABIA", 46.95, 28.3, "!!c_saudi"], ["ARABIAN GULF", 48.85, 29.2, "!!c_gulf"]];
+// zoom slides nudge the ambient light toward their area, so Morph glides it with the zoom
+const ORB_SHIFT = [[0.9, 0.6, -0.5, -0.3], [-0.6, -0.8, 0.4, 0.5], [-1.0, 0.3, 0.6, -0.2], [1.2, 0.8, -0.7, -0.5]];
 const sizeOf = (f, base) => (f.major ? base * 1.5 : f.kind === "infra" ? base * 0.8 : f.kind === "city" ? base * 0.8 : base);
 
 module.exports.mainSlides = function (state, ctx) {
@@ -66,26 +77,30 @@ module.exports.mainSlides = function (state, ctx) {
         if (animated) m.fade(t, Math.max(1800, tm + 450), 700);
         if (f.leader) {
           const [x1, y1, x2, y2] = f.leader;
-          const ln = shape(s, pres.shapes.LINE, { x: x + x1, y: y + y1, w: x2 - x1, h: y2 - y1, line: { color: HEX.text3, width: 0.75 }, name: `!!fk_${f.id}` });
+          const ln = shape(s, pres.shapes.LINE, { x: x + x1, y: y + y1, w: x2 - x1, h: y2 - y1, line: { color: HEX.text2, width: 1 }, name: `!!fk_${f.id}` });
           if (animated) m.fade(ln, Math.max(1800, tm + 450), 700);
         }
       }
     }
     majors.forEach((o, i) => m.breathe(o, (animated ? 2600 : 300) + i * 320, 1700, 1.22));
-    const lab = (str, lon, lat, name) => {
+    COUNTRY.map(([str, lon, lat, name]) => {
       const [x, y] = proj(FULL, lon, lat);
       return text(s, str, { x: x - 1.2, y: y - 0.15, w: 2.4, h: 0.3, fontSize: 13, color: HEX.text3, align: "center", charSpacing: 4, name });
-    };
-    [lab("IRAQ", 46.75, 30.17, "!!c_iraq"), lab("SAUDI ARABIA", 46.95, 28.3, "!!c_saudi"), lab("ARABIAN GULF", 48.85, 29.2, "!!c_gulf")]
-      .forEach((t) => animated && m.fade(t, 600, 900));
+    }).forEach((t) => animated && m.fade(t, 600, 900));
+    // the map itself is clickable: each area zooms in (transparent, on top of markers and labels)
+    HIT.forEach((rects, i) => rects.forEach(([lo0, lo1, la0, la1], k) => {
+      const [x0, y0] = proj(FULL, lo0, la1), [x1, y1] = proj(FULL, lo1, la0);
+      shape(s, pres.shapes.RECTANGLE, { x: x0, y: y0, w: x1 - x0, h: y1 - y0, fill: { color: "000000", transparency: 100 },
+        hyperlink: { slide: state.IDX[F.zoom[i].id], tooltip: `Zoom into ${F.zoom[i].name}` }, name: `!!maph${i}${k}` });
+    }));
     const rx = 8.45, rw = W - MX - rx;
     const legend = text(s, [{ text: "●  ", options: { color: C.accent1 } }, { text: "Oil   ", options: { color: C.text2 } },
       { text: "●  ", options: { color: C.accent2 } }, { text: "Gas   ", options: { color: C.text2 } },
       { text: "◆  ", options: { color: C.text1 } }, { text: "Refinery / port   ", options: { color: C.text2 } },
       { text: "○  ", options: { color: C.text1 } }, { text: "Town", options: { color: C.text2 } }],
       { x: rx, y: 1.95, w: rw, h: 0.35, fontSize: 15, name: "!!legend" });
-    const hint = text(s, "Click an area to zoom in", { x: rx, y: 2.38, w: rw, h: 0.32, fontSize: 14, color: C.text2, italic: true, name: "!!hint" });
-    if (animated) { m.fade(legend, 1900, 700); m.fade(hint, 2050, 700); }
+    const hint = text(s, "Click an area to zoom in and see every field", { x: rx, y: 2.38, w: rw, h: 0.32, fontSize: 14, color: C.text2, italic: true, name: "!!hint" });
+    if (animated) { m.fade(legend, 1300, 700); m.fade(hint, 1450, 700); }
     F.zoom.forEach((z, i) => {
       const y = 2.85 + i * 0.66;
       const bg = shape(s, pres.shapes.ROUNDED_RECTANGLE, { x: rx, y, w: rw, h: 0.54, rectRadius: 0.27, fill: { color: HEX.card }, line: { color: "FFFFFF", transparency: 90, width: 0.75 }, name: `!!pill${i}` });
@@ -94,7 +109,7 @@ module.exports.mainSlides = function (state, ctx) {
       const ar = img(s, state.ic("TbArrowRight", HEX.text2), { x: rx + rw - 0.45, y: y + 0.14, w: 0.26, h: 0.26, name: `!!pilla${i}` });
       shape(s, pres.shapes.ROUNDED_RECTANGLE, { x: rx, y, w: rw, h: 0.54, rectRadius: 0.27, fill: { color: "000000", transparency: 100 },
         hyperlink: { slide: state.IDX[z.id], tooltip: `Zoom into ${z.name}` }, name: `!!pillh${i}` });
-      if (animated) { const t0 = 2100 + i * 140; m.rise(bg, t0); m.rise(dot, t0); m.rise(tx, t0); m.glide(ar, t0 + 200, 700, -0.01); }
+      if (animated) { const t0 = 1500 + i * 120; m.rise(bg, t0); m.rise(dot, t0); m.rise(tx, t0); m.glide(ar, t0 + 200, 700, -0.01); }
     });
     if (!animated) K.button(s, "Continue", rx, 5.6, 2.2, 0.48, state.IDX.regions, { fill: HEX.oil, color: C.background1, name: "hub_next",
       icon: ["TbArrowRight", HEX.bg, "right"] });
@@ -144,7 +159,8 @@ module.exports.hiddenSlides = function (state, ctx) {
     def(z.id, "Content", (s) => {
       const { K, C, pres } = ctx();
       const { text, shape, img, m, ambient, header, source, homeButton, glow } = K;
-      ambient(s, ["amber", 3.9, 4.2, 8.5], ["blue", 11.5, 6.9, 6]);
+      const [ax, ay, bx, by] = ORB_SHIFT[zi];
+      ambient(s, ["amber", 3.9 + ax, 4.2 + ay, 8.5], ["blue", 11.5 + bx, 6.9 + by, 6]);
       header(s, "03 — RESERVOIR LOCATIONS  ·  ZOOM", z.name);
       const box = zoomBox(z.bbox);
       // the same picture, cropped to the viewport: Morph turns the change into a smooth zoom
@@ -152,13 +168,40 @@ module.exports.hiddenSlides = function (state, ctx) {
         sizing: { type: "crop", x: VIEW.x - box.x, y: VIEW.y - box.y, w: VIEW.w, h: VIEW.h } });
       shape(s, pres.shapes.RECTANGLE, { x: VIEW.x, y: VIEW.y, w: VIEW.w, h: VIEW.h,
         fill: { color: "000000", transparency: 100 }, line: { color: HEX.line, width: 1 }, name: "!!mapframe" });
+      COUNTRY.forEach(([str, lon, lat, name]) => {
+        const [x, y] = proj(box, lon, lat);
+        text(s, str, { x: x - 1.2, y: y - 0.15, w: 2.4, h: 0.3, fontSize: 13, color: HEX.text3, transparency: 100, align: "center", charSpacing: 4, name });
+      });
+      // transparent twins of the map's labels and leaders: Morph moves them with the zoom instead of fading them in place
+      const k = box.s / (FULL.w / MAPF.wu);
+      const ghostLeader = (f, x, y) => {
+        if (!f.leader) return;
+        const [x1, y1, x2, y2] = f.leader;
+        shape(s, pres.shapes.LINE, { x: x + x1 * k, y: y + y1 * k, w: (x2 - x1) * k, h: (y2 - y1) * k,
+          line: { color: HEX.text2, width: 1, transparency: 100 }, name: `!!fk_${f.id}` });
+      };
+      const ghostLabel = (f, x, y) => {
+        if (!f.label) return;
+        const [dx, dy, al] = f.label;
+        text(s, f.name, { x: x + dx * k, y: y + dy * k, w: 1.9, h: 0.3, fontSize: 13, color: C.text1, transparency: 100,
+          align: al || "left", name: `!!fl_${f.id}` });
+        ghostLeader(f, x, y);
+      };
       const mine = new Set(z.fields);
       for (const f of F.fields) {
         const [x, y] = proj(box, f.lon, f.lat);
         const focus = mine.has(f.id), col = focus ? colorOf(f) : "4A4A4F";
         const d = sizeOf(f, 0.25) * (focus ? 1 : 0.8);
-        if (!inView(x, y, 0.08 + d * 0.71)) continue;
+        if (!inView(x, y, 0.08 + d * 0.71)) {
+          // off-view: invisible twins of the marker and its map label, placed where the zoom would put them
+          if (f.zoomOnly) continue;
+          marker(K, pres, s, f, x, y, d, colorOf(f), 0, true);
+          ghostLabel(f, x, y);
+          continue;
+        }
         const o = marker(K, pres, s, f, x, y, d, col, focus && (f.kind === "oil" || f.kind === "gas") ? 18 : 0);
+        if (!(focus && f.zlabel)) ghostLabel(f, x, y);
+        else ghostLeader(f, x, y);
         if (focus && f.zlabel) {
           const [dx, dy, al] = f.zlabel;
           const t = text(s, f.zname || f.name, { x: x + dx, y: y + dy, w: 1.95, h: 0.34, fontSize: 15, bold: f.kind === "oil" || f.kind === "gas",
@@ -171,7 +214,7 @@ module.exports.hiddenSlides = function (state, ctx) {
       const pw = (VIEW.w - 3 * 0.12) / 4, sy = VIEW.y + VIEW.h + 0.13;
       F.zoom.forEach((o, i) => {
         const cur = i === zi;
-        K.button(s, o.short, VIEW.x + i * (pw + 0.12), sy, pw, 0.4, cur ? state.IDX[z.id] : state.IDX[o.id],
+        K.button(s, o.short, VIEW.x + i * (pw + 0.12), sy, pw, 0.4, cur ? null : state.IDX[o.id],
           { fontSize: 14, fill: cur ? HEX.oil : HEX.card2, color: cur ? C.background1 : C.text1, name: `!!zsw${i}`,
             tooltip: cur ? z.name : `Zoom to ${o.name}` });
       });

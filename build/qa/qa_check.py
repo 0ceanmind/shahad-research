@@ -126,6 +126,10 @@ def shapes_of(xml, layout_ph):
         alpha = re.search(r'<a:solidFill><a:srgbClr val="[0-9A-F]+"><a:alpha val="0"/>', body)
         sh["invisible"] = bool(alpha) or (kind == "sp" and nofill and "<a:t>" not in body and "<a:ln" not in body)
         tx = re.search(r'<p:txBody>(.*?)</p:txBody>', body, flags=re.S)
+        if tx and tx.group(1).count('<a:alpha val="0"/>') >= tx.group(1).count("<a:r>") > 0:
+            sh["invisible"] = True   # fully transparent text (a Morph twin): nothing to check
+            out.append(sh)
+            continue
         if tx and "<a:t>" in tx.group(1):
             bp = re.search(r'<a:bodyPr[^>]*>', tx.group(1)).group(0)
             ins = [int(attr(bp, k, d)) / EMU for k, d in (("lIns", 91440), ("tIns", 45720), ("rIns", 91440), ("bIns", 45720))]
@@ -215,6 +219,8 @@ def main(path):
             if s["kind"] == "pic" and (s["descr"].startswith("/") or len(s["descr"]) > 300 or not s["descr"]):
                 issues.append(f"{tag}: image {s['name']} description is a path/blob/empty")
             box = (s["x"], s["y"], s["x"] + s["w"], s["y"] + s["h"])
+            if s.get("invisible") and s["kind"] == "sp":
+                continue
             if s["text"] is None:
                 if s["kind"] in ("sp", "pic") and not s["invisible"] and s["w"] < 0.5 and s["h"] < 0.5 and s["name"] != "!!badge":
                     marks.append((s, box))

@@ -19,7 +19,7 @@ Both cover the five required points: (1) history and types of oil and gas, (2) r
   Morph and the motion loops only play in a slide show. Google Slides, Keynote and file previewers show static slides.
 - Every slide builds itself automatically; press → / Space / click to move on.
 - Slide 2 is the contents hub: click any chapter tile to jump there. The small grid button at the bottom right of every slide returns to it.
-- Slide 16 (field map) and slide 17 (four producing areas): click an area to zoom in. The map zooms in smoothly (Morph) to a
+- Slide 16 (field map) and slide 17 (four producing areas): click an area on the map, a pill or a card to zoom in. The map zooms in smoothly (Morph) to a
   hidden detail slide. From there, the pills under the map switch between areas, **← Back to map** returns to the map,
   and **Continue →** on the map carries on with slide 17. In normal running order the hidden zoom slides are skipped.
 - Every slide has speaker notes with the full talking points and sources.

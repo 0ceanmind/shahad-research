@@ -49,12 +49,15 @@ module.exports = function (state, ctx) {
       anim.roundCaps(name);
       return segs;
     };
-    const trunk = drawRoute(ROUTES.trunk, 94.8, 900, 700, "fm_trunk");
-    const east = drawRoute(ROUTES.east, 84.2, 1250, 900, "fm_east");
+    const trunk = drawRoute(ROUTES.trunk, 94.8, 750, 700, "fm_trunk");
+    const east = drawRoute(ROUTES.east, 84.2, 1100, 900, "fm_east");
     const br = {};
     ROUTES.branches.forEach((b, i) => {
-      const t0 = b.from === "trunk" ? 1300 : 1900 + i * 90;
+      const t0 = b.from === "trunk" ? 1150 : 1850 + i * 60;
       br[b.name] = drawRoute(b.pts, b.share, t0, b.from === "trunk" ? 900 : 800, `fm_b${i}`);
+    });
+    // destination dots and labels after all routes, so no line paints over a marker
+    ROUTES.branches.forEach((b, i) => {
       const [x, y] = P(b.pts[b.pts.length - 1]);
       const dot = shape(s, pres.shapes.OVAL, { x: x - 0.11, y: y - 0.11, w: 0.22, h: 0.22, fill: { color: HEX.text }, line: { color: HEX.oil, width: 2.5 },
         shadow: glow(HEX.oil, 12, 0.9), name: `fm_d${i}` });
@@ -67,16 +70,13 @@ module.exports = function (state, ctx) {
         below: [Math.min(x - lw / 2, W - MX - lw), y + 0.17, "center"] }[side];
       const t = text(s, [{ text: nm + " ", options: { bold: true, color: C.text1 } }, { text: pc, options: { bold: true, color: C.accent1 } }],
         { x: pos[0], y: pos[1], w: lw, h: 0.34, fontSize: 15, align: pos[2], name: `fm_l${i}` });
-      const td = (b.from === "trunk" ? 2000 : 2450 + i * 90);
-      m.land(dot, td, 600, 1.8); m.fade(t, td + 150, 700);
+      const td = (b.from === "trunk" ? 1850 : 2350 + i * 60);
+      m.land(dot, td, 600, 1.8); m.fade(t, td + 150, 500);
     });
     // Kuwait + Hormuz
     const [kx, ky] = P(ROUTES.origin), [hx, hy] = P(ROUTES.hormuz);
-    const kd = shape(s, pres.shapes.OVAL, { x: kx - 0.15, y: ky - 0.15, w: 0.3, h: 0.3, fill: { color: HEX.oil }, shadow: glow(HEX.oil, 18, 0.95), name: "fm_kw" });
-    const kl = text(s, "Kuwait", { x: kx - 1.45, y: ky - 0.42, w: 1.3, h: 0.32, fontSize: 15, bold: true, align: "right", name: "fm_kwl" });
     const hz = shape(s, pres.shapes.OVAL, { x: hx - 0.07, y: hy - 0.07, w: 0.14, h: 0.14, fill: { color: HEX.red }, name: "fm_hz" });
     const hl = text(s, "Strait of Hormuz", { x: hx + 0.1, y: hy - 0.5, w: 1.8, h: 0.3, fontSize: 13, color: C.accent4, name: "fm_hzl" });
-    m.land(kd, 700, 700, 2.0); m.fade(kl, 800, 700); m.breathe(kd, 1500, 1700, 1.12);
     m.land(hz, 1200, 600, 2.0); m.fade(hl, 1300, 700);
     // tankers keep travelling the main routes while the slide is shown
     const travel = (segs, n, t0, dur) => {
@@ -90,8 +90,12 @@ module.exports = function (state, ctx) {
     travel([...trunk, ...east, ...br["China"]], 0, 3300, 7000);
     travel([...trunk, ...br["India"]], 2, 4500, 7000);
     travel([...trunk, ...east, ...br["South Korea"]], 1, 6800, 7000);
+    // Kuwait disc on top: parked tankers stay hidden under it in static views and during Morph
+    const kd = shape(s, pres.shapes.OVAL, { x: kx - 0.15, y: ky - 0.15, w: 0.3, h: 0.3, fill: { color: HEX.oil }, shadow: glow(HEX.oil, 18, 0.95), name: "fm_kw" });
+    const kl = text(s, "Kuwait", { x: kx - 1.45, y: ky - 0.42, w: 1.3, h: 0.32, fontSize: 15, bold: true, align: "right", name: "fm_kwl" });
+    m.land(kd, 600, 700, 2.0); m.fade(kl, 700, 700); m.breathe(kd, 1500, 1700, 1.12);
     const lg = text(s, "Labels and line widths: share of 2024 crude export value (OEC)", { x: mb.x, y: 6.12, w: 6.5, h: 0.3, fontSize: 13, color: C.text2, name: "fm_lg" });
-    m.fade(lg, 3000, 700);
+    m.fade(lg, 2300, 700);
     source(s, "Sources: Energy Institute (2025), by volume; OEC (n.d.), 2024 data by value; OPEC (2025b). Routes stylised; map: Natural Earth (n.d.).");
     homeButton(s, state.IDX.contents);
     s.addNotes("Kuwait's crude goes almost entirely east. In 2024, 93% of its crude exports by volume went to the Asia-Pacific region (Energy Institute): China 27%, Japan 14%, India 10% and the rest of Asia-Pacific, mainly South Korea and Taiwan, 43%. By value (OEC), China took 33%, South Korea 23%, Japan 17%, Taiwan 11% and India 11%, so the top five buyers, all Asian, account for about 95%. For comparison, OPEC as a whole sent about 72% of its crude to Asia (OPEC, 2025b). Notice that every route starts in the Gulf and passes through the Strait of Hormuz.");
@@ -117,17 +121,17 @@ module.exports = function (state, ctx) {
     const n = E.years.length, px = (i) => box.x + box.w * (L.x + L.w * (i + 0.5) / n), py = (v) => box.y + box.h * (L.y + L.h * (1 - v / 2500));
     const l1 = text(s, "Crude oil", { x: px(0) - 0.4, y: py(E.crude[0]) - 0.55, w: 2, h: 0.35, fontSize: 17, bold: true, color: C.accent1 });
     const l2 = text(s, "Refined products (incl. LPG)", { x: px(0) - 0.4, y: py(E.products[0]) + 0.2, w: 3.8, h: 0.35, fontSize: 17, bold: true });
-    const un = text(s, "Exports, kb/d (thousand barrels per day)", { x: MX, y: 1.86, w: 4.5, h: 0.3, fontSize: 14, color: C.text2 });
+    const un = text(s, "Exports, kb/d (thousand barrels per day)", { x: MX, y: 1.7, w: 4.5, h: 0.3, fontSize: 14, color: C.text2 });
     m.fade(un, 300, 700); m.fade(l1, 500, 700); m.fade(l2, 600, 700);
     const i24 = E.years.indexOf(2024);
     const ring = shape(s, pres.shapes.OVAL, { x: px(i24) - 0.32, y: py(1186) - 0.32, w: 0.64, h: 0.64, fill: { color: HEX.bg, transparency: 100 },
       line: { color: HEX.gold, width: 2.5 }, shadow: glow(HEX.gold, 14, 0.7) });
     m.land(ring, 250 + K.wipeTime((px(i24) - box.x) / box.w, 1900), 700, 1.8); m.breathe(ring, 3200, 1500, 1.15);
     const a = text(s, "2024", { x: 9.35, y: 2.0, w: 3.4, h: 1.2, fontSize: 80, bold: true, color: C.accent3 });
-    const b = text(s, "the first year product exports (1.20\u00a0million\u00a0b/d) beat crude exports (1.18\u00a0million\u00a0b/d)",
+    const b = text(s, "the first year product exports (1,196\u00a0kb/d) beat crude exports (1,176\u00a0kb/d)",
       { x: 9.35, y: 3.25, w: 3.4, h: 1.3, fontSize: 18, bold: true });
     const c = text(s, "Al-Zour ran at full capacity, so crude went to Kuwaiti refineries instead of tankers. Crude led again in 2025.",
-      { x: 9.35, y: 4.6, w: 3.4, h: 1.4, fontSize: 15, color: C.text2 });
+      { x: 9.35, y: 4.35, w: 3.4, h: 1.4, fontSize: 15, color: C.text2 });
     m.scale(a, 1750, 1000, 0.88); m.rise(b, 2000); m.rise(c, 2200);
     source(s, "Sources: JODI (2026), annual averages of monthly data; MEES (2026); EIA (2023b).");
     homeButton(s, state.IDX.contents);
@@ -149,14 +153,18 @@ module.exports = function (state, ctx) {
         valAxisMinVal: 0, valAxisMaxVal: ymax, valAxisMajorUnit: 50, valAxisLabelFormatCode: '"$"0',
         valGridLine: { color: "2C2C2E", size: 0.75 }, catGridLine: { style: "none" }, catAxisLineShow: false, valAxisLineShow: false }));
     m.wipe(ch, "L", 250, WD);
+    m.fade(text(s, "Brent crude, annual average (US$ per barrel)", { x: MX, y: 1.7, w: 6, h: 0.3, fontSize: 14, color: C.text2 }), 300, 700);
     const n = B.years.length;
     const px = (yr) => box.x + box.w * (L.x + L.w * (B.years.indexOf(yr) + 0.5) / n);
     const py = (v) => box.y + box.h * (L.y + L.h * (1 - v / ymax));
     // year labels drawn as text (the chart's own skip-every-5 labels are not honoured by every renderer)
-    const yl = [2000, 2005, 2010, 2015, 2020, 2025].map((yr) => text(s, String(yr), { x: px(yr) - 0.4, y: box.y + box.h * (L.y + L.h) + 0.08,
+    const yl = [2000, 2005, 2010, 2015, 2020, 2025].map((yr) => text(s, String(yr), { x: px(yr) - 0.4, y: box.y + box.h * (L.y + L.h) + 0.14,
       w: 0.8, h: 0.3, fontSize: 16, color: C.text2, align: "center" }));
     yl.forEach((t, i) => m.fade(t, 250 + K.wipeTime(i / 5, WD) * 0.9, 600));
-    // placement: a = above/below the point, side = which way the label extends from it
+    // placement: a = above/below the point, side = which way the label extends from it; labels in a row share a baseline
+    const ev = [[2008, "above"], [2016, "below"], [2020, "below"], [2022, "above"]].map(([yr, p]) => [p, B.values[B.years.indexOf(yr)]]);
+    const rowY = { above: py(Math.max(...ev.filter((e) => e[0] === "above").map((e) => e[1]))) - 0.82,
+      below: py(Math.min(...ev.filter((e) => e[0] === "below").map((e) => e[1]))) + 0.2 };
     [[2008, "2008", "$97 average, $144 peak", "above", "left"], [2016, "2016", "$44 average, $26 low", "below", "left"],
       [2020, "2020", "COVID-19: $42", "below", "right"], [2022, "2022", "war in Ukraine: $101", "above", "centre"]]
       .forEach(([yr, a, b, vpos, side]) => {
@@ -164,7 +172,7 @@ module.exports = function (state, ctx) {
         const dot = shape(s, pres.shapes.OVAL, { x: cx - 0.09, y: cy - 0.09, w: 0.18, h: 0.18, fill: { color: HEX.text }, line: { color: HEX.oil, width: 2.5 } });
         const lw = 2.5, lx = side === "left" ? cx + 0.2 - lw : side === "right" ? cx - 0.2 : cx - lw / 2;
         const lab = text(s, [{ text: a, options: { bold: true, color: C.text1, breakLine: true } }, { text: b, options: { color: C.text2 } }],
-          { x: lx, y: vpos === "above" ? cy - 0.82 : cy + 0.2, w: lw, h: 0.62, fontSize: 15,
+          { x: lx, y: rowY[vpos], w: lw, h: 0.62, fontSize: 15,
             align: side === "left" ? "right" : side === "right" ? "left" : "center" });
         m.land(dot, t0, 600, 1.8);
         if (vpos === "above") m.drop(lab, t0 + 100, 700, 0.012); else m.rise(lab, t0 + 100, 700, 0.012);
@@ -175,11 +183,11 @@ module.exports = function (state, ctx) {
       { text: `$${k["2023"]}  (2023)`, options: { bold: true, fontSize: 24, color: C.accent1, breakLine: true } },
       { text: `$${k["2024"]}  (2024)`, options: { bold: true, fontSize: 24, color: C.accent1, breakLine: true } },
       { text: "Medium-sour; KPC sets a monthly official selling price for each grade.", options: { fontSize: 15, color: C.text2 } },
-    ], { x: 9.45, y: 1.95, w: 3.28, h: 2.75, fill: { color: HEX.card }, line: { color: "FFFFFF", transparency: 90, width: 0.75 }, shape: pres.shapes.ROUNDED_RECTANGLE, rectRadius: CARD_R,
+    ], { x: 9.45, y: 1.95, w: 3.28, h: 2.5, fill: { color: HEX.card }, line: { color: "FFFFFF", transparency: 90, width: 0.75 }, shape: pres.shapes.ROUNDED_RECTANGLE, rectRadius: CARD_R,
       margin: [14, 12, 10, 10], paraSpaceAfter: 6 });
     const y26 = text(s, [{ text: "2026 so far: ", options: { bold: true, color: C.accent4 } },
       { text: `Brent averaged $${B.ytd_2026} up to 29 September, peaking at $138 on 7 April.`, options: { color: C.text2 } }],
-      { x: 9.45, y: 4.9, w: 3.28, h: 1.2, fontSize: 15 });
+      { x: 9.45, y: 4.65, w: 3.28, h: 1.2, fontSize: 15 });
     m.scale(card, 2000, 900, 0.95); m.rise(y26, 2250, 700);
     source(s, "Sources: EIA (2026), annual averages of daily Brent prices; OPEC (2025a), Kuwait Export Crude.");
     homeButton(s, state.IDX.contents);
@@ -224,7 +232,7 @@ module.exports = function (state, ctx) {
     header(s, KK, "Where Kuwait's LNG comes from");
     const G = MKT.lng_2024;
     const ch = `${K.sid()}_lng`;
-    const cols = [HEX.gas, "3A8FB7", "2B6A88", "5A7C99", HEX.gold, "8E8E93", "3A3A3C"];
+    const cols = [HEX.gas, "3A8FB7", "2B6A88", "5A7C99", HEX.gold, "8E8E93", "5A5A5F"];
     s.addChart(pres.charts.DOUGHNUT, [{ name: "LNG imports by supplier, 2024 (%)", labels: G.labels, values: G.values }],
       Object.assign({ x: 0.6, y: 1.95, w: 4.3, h: 4.3, holeSize: 70, chartColors: cols, showLegend: false, showValue: false,
         dataBorder: { pt: 1.5, color: HEX.bg }, objectName: ch, firstSliceAng: 0, layout: { x: 0.03, y: 0.03, w: 0.94, h: 0.94 } }, state.chartFrame()));
@@ -240,9 +248,9 @@ module.exports = function (state, ctx) {
       m.scale(d, t0, 600, 0.6); m.rise(t, t0, 700, 0.012);
     });
     const stats = [
-      [`≈ ${G.mt} Mt`, "of LNG in 2024, about 40% of all the gas Kuwait used"],
+      [`≈ ${G.mt} Mt`, `of LNG (= ${G.bcm} bcm of gas), about 40% of all the gas Kuwait used in 2024`],
       [`$${G.jkm_2022} → $${G.jkm_2024}`, "Asian spot LNG price (JKM) per MMBtu, 2022 → 2024"],
-      ["≈ $4 bn", "estimated 2024 import bill at spot prices (illustrative)"],
+      ["≈ $4 bn", "estimated 2024 import bill at spot prices"],
     ];
     stats.forEach(([v, l], i) => {
       const y = 2.0 + i * 1.45, t0 = 1500 + i * 220;
@@ -250,7 +258,7 @@ module.exports = function (state, ctx) {
       const b = text(s, l, { x: 8.6, y: y + 0.7, w: 4.1, h: 0.62, fontSize: 15, color: C.text2 });
       m.rise(a, t0, 900); m.fade(b, t0 + 150, 700);
     });
-    source(s, "Source: Energy Institute (2025), LNG trade and JKM prices. Bill = 7.15 Mt × 46.4 million MMBtu/Mt × $11.91 (estimate).");
+    source(s, "Source: Energy Institute (2025), LNG trade and JKM prices; shares rounded. Bill = 7.15 Mt × 46.4 million MMBtu/Mt × $11.91 (estimate).");
     homeButton(s, state.IDX.contents);
     s.addNotes("Because associated gas cannot keep up with demand for power and water desalination, Kuwait imported 9.7 billion cubic metres of LNG in 2024, about 7.2 million tonnes or 40% of its gas use (Energy Institute). Qatar supplied 61.4%, Nigeria 16.6% and the United States 9.5%; Oman supplied 3.0%. Gas is bought at international prices: the Asian spot benchmark JKM averaged $33.98 per MMBtu in 2022 and $11.91 in 2024. At 2024 spot prices the import bill would be roughly $4 billion; Kuwait's actual contract prices are not published, so this is only an estimate.");
   });
@@ -259,11 +267,11 @@ module.exports = function (state, ctx) {
   def("hormuz", "Content", (s) => {
     const { K, C, pres } = ctx();
     const { text, shape, m, ambient, header, source, homeButton, glow } = K;
-    ambient(s, ["red", 4.5, 4.6, 10], ["amber", 12.0, 7.6, 6], { flicker: true });
+    ambient(s, ["red", 4.5, 8.4, 11], ["amber", 12.0, 7.6, 6], { flicker: true });
     header(s, "2026 — A LIVE STRESS TEST", "When the Strait of Hormuz closed");
     const Y = MKT.y2026;
     const base = 5.05, maxV = 1400, maxH = 2.45, bw = 0.66, gx = 0.42, x0 = 0.9;
-    const un = text(s, "Kuwait crude exports, 2026 (kb/d = thousand barrels per day)", { x: MX, y: 1.86, w: 6, h: 0.32, fontSize: 15, color: C.text2 });
+    const un = text(s, "Kuwait crude exports, 2026 (kb/d = thousand barrels per day)", { x: MX, y: 1.7, w: 6, h: 0.32, fontSize: 14, color: C.text2 });
     m.fade(un, 250, 700);
     Y.months.forEach((mo, i) => {
       const v = Y.crude_exports[i], h = Math.max(0.04, maxH * v / maxV), x = x0 + i * (bw + gx), t0 = 350 + i * 140;

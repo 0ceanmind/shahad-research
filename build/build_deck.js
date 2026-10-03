@@ -62,7 +62,7 @@ def("contents", "Content", (s) => {
     ["02", "Resources\n& Growth", "Reserves & output", "TbBuildingFactory2", "sec2"],
     ["03", "Reservoir\nLocations", "Fields & rocks", "TbMapPin", "sec3"],
     ["04", "Exports\n& Costs", "Markets & prices", "TbShip", "sec4"],
-    ["05", "Conclusion\n& Sources", "Findings & sources", "TbBooks", "takeaways"],
+    ["05", "Conclusion\n& Sources", "Key takeaways", "TbBooks", "takeaways"],
   ];
   const gap = 0.25, w = (W - 2 * MX - 4 * gap) / 5, y = 2.05, h = 3.85;
   tiles.forEach(([n, t, d, ico, target], i) => {
@@ -94,7 +94,7 @@ def("glance", "Content", (s) => {
     ["101.5", "billion barrels", "proven crude oil reserves, about 6.5% of world total", "TbBarrel"],
     ["2.4", "million b/d", "crude oil output in 2024, under OPEC+ cuts", "TbDroplet"],
     ["1.4", "million b/d", "domestic refining capacity since Al-Zour came on line", "TbBuildingFactory"],
-    ["90%+", "of exports", "are fuels, and oil funds most of the state budget", "TbCoin"],
+    ["90%+", "of exports", "are petroleum; oil funds most of the state budget", "TbCoin"],
   ];
   const gap = 0.35, w = (W - 2 * MX - 3 * gap) / 4;
   stats.forEach(([v, u, l, ico], i) => {
@@ -141,7 +141,7 @@ def("timeline", "Content", (s) => {
     ["1946", "First crude\nexport"], ["1960", "Co-founds OPEC;\nKNPC formed"],
     ["1975", "KOC fully\nnationalised"], ["1980", "KPC created"],
     ["1991", "Well fires after\nthe 1990 invasion"], ["2018", "Jurassic super-light\ncrude and gas"],
-    ["2024", "Al-Zour refinery at\nfull 615 kb/d"],
+    ["2024", "Al-Zour refinery\nat full 615 kb/d"],
   ];
   const x0 = 1.35, x1 = W - 1.35, yL = 4.05, step = (x1 - x0) / (items.length - 1), WD = 2400, T0 = 250;
   const lx = x0 - 0.3, lw = x1 - x0 + 0.6;
@@ -186,10 +186,11 @@ def("fires", "Content", (s) => {
     m.rise(a, t0, 900); m.fade(b, t0 + 150, 800);
   });
   const rec = text(s, [{ text: "Recovery: ", options: { bold: true, color: C.text1 } },
-    { text: "27 international teams and Kuwait's own Wild Well Killers; pre-war output restored within about four years.", options: { color: C.text2 } }],
-    { x: MX, y: 5.45, w: 6.3, h: 0.8, fontSize: 17 });
+    { text: "27 international teams and Kuwait's own", options: { color: C.text2, breakLine: true } },
+    { text: "Wild Well Killers; pre-war output back within about four years.", options: { color: C.text2 } }],
+    { x: MX, y: 5.45, w: 6.55, h: 0.8, fontSize: 17 });
   m.fade(rec, 1900, 900);
-  source(s, "Sources: KOC (n.d.-b); OSAGWI (1998, 2000); Britannica (n.d.-a). KOC: 700+ wells ablaze; DoD: 750+ of 943 ignited or damaged.");
+  source(s, "Sources: KOC (n.d.-b); OSAGWI (1998, 2000); Britannica (n.d.-a). KOC: 700+ wells ablaze; OSAGWI: 750+ of 943 ignited or damaged.");
   homeButton(s, state.IDX.contents);
   s.addNotes("Between August 1990 and February 1991 about 80% of KOC's producing wells and facilities were destroyed (KOC). More than 700 wells were set on fire; the U.S. Department of Defense counted over 750 of 943 wells ignited or damaged. At the peak an estimated 4-6 million barrels per day of oil and 70-100 million cubic metres per day of gas were burning, and more than one billion barrels were lost. The last fire, Burgan 118, was capped on 6 November 1991. Kuwait's own team, the Kuwait Wild Well Killers, capped 41 wells in 54 days. Spilled oil formed more than 100 oil lakes covering about 19 square kilometres (U.S. DoD).");
 });
@@ -208,7 +209,7 @@ def("crudes", "Content", (s) => {
     m.fade(t, 800 + i * 120, 700);
   });
   // class boundaries (22.3° and 31.1° API) are marked below the bar, clear of the crude markers
-  [22.3, 31.1].forEach((a) => m.fade(shape(s, pres.shapes.RECTANGLE, { x: X(a) - 0.01, y: y + 0.16, w: 0.02, h: 0.3, fill: { color: HEX.text2 } }), 800, 600));
+  [22.3, 31.1].forEach((a) => m.fade(shape(s, pres.shapes.RECTANGLE, { x: X(a) - 0.01, y: y + 0.26, w: 0.02, h: 0.2, fill: { color: HEX.text2 } }), 800, 600));
   [10, 20, 30, 40, 50].forEach((a) => m.fade(text(s, `${a}°`, { x: X(a) - 0.4, y: y + 0.62, w: 0.8, h: 0.3, fontSize: 13, color: C.text2, align: "center" }), 900, 600));
   const crudes = [
     { n: "Kuwait Export Heavy", api: 16, s: "4.93% S", d: "Heavy, very sour", up: true },
@@ -237,7 +238,7 @@ def("crudes", "Content", (s) => {
   });
   const f = text(s, "API gravity = 141.5 / SG − 131.5   ·   higher API = lighter oil   ·   S = sulfur content (wt%)",
     { x: MX, y: 6.08, w: 10.5, h: 0.32, fontSize: 14, color: C.text2 });
-  m.fade(f, 2900, 700);
+  m.fade(f, 2500, 600);
   source(s, "Sources: Mehdi (2021); Energy Intelligence (n.d.); S&P Global (2018b, 2020); EIA (2023a). Class limits: 22.3° and 31.1° API.");
   homeButton(s, state.IDX.contents);
   s.addNotes("Kuwait Export Crude (KEC) is the main export blend: medium and sour, about 30.5 degrees API and 2.5% sulfur, mostly from the Cretaceous reservoirs of Greater Burgan. Since July 2018 Kuwait also exports Kuwait Super Light Crude from the deep Jurassic reservoirs of North Kuwait: about 48 degrees API and only about 0.4% sulfur. Kuwait Export Heavy is about 16 degrees API with almost 5% sulfur. Khafji crude from the offshore Partitioned Zone shared with Saudi Arabia is about 28.5 degrees API and 2.85% sulfur. For refiners, sour crudes need hydrotreating capacity, which is why Kuwait's new refineries have large desulfurisation units.");
@@ -255,11 +256,13 @@ def("gastypes", "Content", (s) => {
       layout: { x: 0.03, y: 0.03, w: 0.94, h: 0.94 } }, chartFrame()));
   m.wheel(ch, 300, 1600);
   const c1 = text(s, "70%", { x: 1.65, y: 3.3, w: 2.4, h: 0.9, fontSize: 54, bold: true, align: "center" });
-  const c2 = text(s, "associated gas, 2021", { x: 1.75, y: 4.18, w: 2.2, h: 0.35, fontSize: 14, color: C.text2, align: "center" });
-  m.scale(c1, 1100, 900, 0.85); m.fade(c2, 1250, 600);
+  const c2 = text(s, "associated gas,\nshare of 2021 output", { x: 1.75, y: 4.18, w: 2.2, h: 0.5, fontSize: 14, color: C.text2, align: "center" });
+  // the gas slice (30%, 252°–360° clockwise from 12 o'clock) labelled on the ring
+  const c3 = text(s, "30%", { x: 1.14, y: 2.9, w: 0.6, h: 0.35, fontSize: 16, bold: true, color: HEX.bg, align: "center", valign: "middle" });
+  m.scale(c1, 1100, 900, 0.85); m.fade(c2, 1250, 600); m.fade(c3, 1250, 600);
   const rows = [
     ["TbDroplet", HEX.oil, "Associated gas", "Released with crude oil, so its output follows oil quotas"],
-    ["TbFlame", HEX.gas, "Non-associated Jurassic gas", "Deep, high-pressure, sour gas in North Kuwait; on stream since 2018"],
+    ["TbFlame", HEX.gas, "Non-associated Jurassic gas", "Deep, high-pressure sour gas in North Kuwait, since 2018"],
     ["TbShip", HEX.text, "Imported LNG", "Imported since 2009; about 40% of the gas used in 2024"],
   ];
   rows.forEach(([ico, col, h, d], i) => {
@@ -333,7 +336,7 @@ def("production", "Content", (s) => {
     [1972, P[1972], "1972 · 3.34 mb/d", "all-time peak", 1.25, -0.36, false],
     [1991, P[1991], "1991 · 0.19 mb/d", "invasion and fires", 1.32, -0.5, false],
     [2012, P[2012], "2012 · ≈ 3.2 mb/d", "post-war high (est.)", 0, -0.92, false],
-    [2024, P[2024], "2024 · 2.7 mb/d", "incl. NGLs; crude 2.4", -0.35, 0.1, false],
+    [2024, P[2024], "2024 · ≈ 2.7 mb/d", "incl. NGLs; crude 2.4", -0.35, 0.17, false],
   ];
   notes.forEach(([yr, v, a, b, ox, oy, leader]) => {
     const t0 = T0 + wipeTime((px(yr) - box.x) / box.w, WD);
@@ -347,8 +350,8 @@ def("production", "Content", (s) => {
     if (oy < 0) m.drop(lab, t0 + 100, 700, 0.012); else m.rise(lab, t0 + 100, 700, 0.012);
     if (leader) m.wipe(shape(s, pres.shapes.RECTANGLE, { x: cx - 0.007, y: cy + oy + 0.66, w: 0.014, h: -oy - 0.78, fill: { color: HEX.text3 } }), "B", t0 + 100, 500);
   });
-  m.fade(text(s, "mb/d = million barrels per day (total oil, incl. NGLs)", { x: MX, y: 1.86, w: 6, h: 0.3, fontSize: 14, color: C.text2 }), 300, 700);
-  source(s, "Sources: Energy Institute (2025) via Our World in Data (2025), incl. NGLs; some years (e.g. 2012) derived; 1946–55: KPC (n.d.-b).");
+  m.fade(text(s, "mb/d = million barrels per day (total oil, incl. NGLs)", { x: MX, y: 1.7, w: 6, h: 0.3, fontSize: 14, color: C.text2 }), 300, 700);
+  source(s, "Sources: Energy Institute (2025) via Our World in Data (2025), incl. NGLs; some years (e.g. 2012, 2024) derived; 1946–55: KPC (n.d.-b).");
   homeButton(s, state.IDX.contents);
   s.addNotes("Output rose from about 16 thousand b/d in 1946 to an all-time peak of 3.34 million b/d in 1972 (Energy Institute, total oil including NGLs). After nationalisation, conservation policy and the 1980s price collapse it fell to around one million b/d. The 1990-91 invasion and fires cut it to only 185 thousand b/d in 1991. It recovered within four years and reached an estimated post-war high of about 3.2 million b/d in 2012 (derived from Energy Institute energy data). Since 2017 OPEC+ agreements have set Kuwait's production; in 2024 crude alone averaged about 2.4 million b/d (JODI), or about 2.7 million b/d including NGLs.");
 });
@@ -370,11 +373,11 @@ def("gasbalance", "Content", (s) => {
     catAxisLabelFrequency: 4, valGridLine: { color: "2C2C2E", size: 0.75 }, catGridLine: { style: "none" },
     catAxisLineShow: false, valAxisLineShow: false }));
   m.wipe(ch, "L", 250, 2400);
-  const l1 = text(s, "LNG\nimports", { x: 7.55, y: 2.9, w: 1.0, h: 0.6, fontSize: 16, bold: true, align: "center" });
+  const l1 = text(s, "LNG\nimports", { x: 7.42, y: 2.9, w: 1.0, h: 0.6, fontSize: 16, bold: true, align: "center" });
   const l2 = text(s, "Domestic production", { x: 5.6, y: 4.6, w: 2.9, h: 0.35, fontSize: 16, bold: true, color: C.background1 });
-  const l3 = text(s, "billion m³ per year", { x: MX, y: 1.86, w: 3, h: 0.3, fontSize: 14, color: C.text2 });
+  const l3 = text(s, "billion m³ (bcm) per year", { x: MX, y: 1.7, w: 3.5, h: 0.3, fontSize: 14, color: C.text2 });
   const at = (x) => 250 + K.wipeTime((x - 0.5) / 8.3, 2400) + 120;
-  m.fade(l3, 300, 700); m.fade(l2, at(5.6), 600); m.fade(l1, at(7.55), 600);
+  m.fade(l3, 300, 700); m.fade(l2, at(5.6), 600); m.fade(l1, at(7.42), 600);
   const big = text(s, "40%", { x: 9.3, y: 2.0, w: 3.4, h: 1.4, fontSize: 96, bold: true, color: C.accent2 });
   const bt = text(s, "of the gas Kuwait used in 2024 was imported as LNG", { x: 9.3, y: 3.45, w: 3.4, h: 0.95, fontSize: 19, bold: true });
   const bd = text(s, "≈15 bcm produced vs ≈25 bcm consumed. Imports began in 2009 at Mina Al-Ahmadi; Al-Zour now has a permanent LNG terminal.",
@@ -448,7 +451,7 @@ def("refining", "Content", (s) => {
   });
   const tot = text(s, [{ text: "= 1,415 kb/d ", options: { bold: true, color: C.accent1 } }, { text: "of crude distillation in Kuwait", options: { color: C.text2 } }],
     { x: 5.6, y: 5.4, w: 7.1, h: 0.4, fontSize: 18 });
-  m.rise(tot, 2600);
+  m.rise(tot, 2450, 700);
   source(s, "Sources: EIA (2023b); KNPC (n.d.-b, n.d.-c); KIPIC (2024); S&P Global (2024). Capacities in kb/d (thousand b/d).");
   homeButton(s, state.IDX.contents);
   s.addNotes("According to the EIA, Kuwait's refining capacity rose from about 600,000 b/d in January 2021 to about 1.4 million b/d in July 2023. Two things drove this: the new Al-Zour refinery (615,000 b/d, three crude units, run by KIPIC) and KNPC's Clean Fuels Project, which upgraded and integrated Mina Al-Ahmadi (346,000 b/d) and Mina Abdullah (454,000 b/d). Al-Zour first ran at full capacity on 4 February 2024. As a result Kuwait exports far more refined products than before; in 2024 product exports briefly overtook crude.");
@@ -496,7 +499,7 @@ def("strata", "Content", (s) => {
   rows.slice().reverse().forEach(([band, lab], k) => { const t0 = 250 + k * 120; m.wipe(band, "L", t0, 600); m.fade(lab, t0 + 200, 600); });
   const groups = [
     ["Heavy oil", "Shallow Lower Fars sands, Ratqa, North\u00a0Kuwait", "heavy", HEX.oil],
-    ["Kuwait Export Crude", "Cretaceous sandstones and carbonates of Burgan, Raudhatain, Sabriya, Minagish and Umm\u00a0Gudair", "kec", HEX.oil],
+    ["Kuwait Export Crude", "Cretaceous sandstones and carbonates of the Burgan, Raudhatain, Sabriya, Minagish and Umm\u00a0Gudair fields", "kec", HEX.oil],
     ["Super-light oil & sour gas", "Deep Jurassic carbonates of North Kuwait, high pressure and temperature", "jur", HEX.gas],
   ];
   groups.forEach(([h, d, key, col], i) => {
@@ -522,19 +525,19 @@ require("./build_markets")(state, ctx);
 def("takeaways", "Content", (s) => {
   const { text, shape, img, m, ambient, header, homeButton } = K;
   ambient(s, ["amber", 6.6, 7.9, 11], ["blue", 1.0, 0.5, 6]);
-  header(s, "05 — CONCLUSION", "What the numbers say");
-  const gap = 0.3, w = (W - 2 * MX - gap) / 2, h = 1.85;
+  header(s, "05 — CONCLUSION & SOURCES", "What the numbers say");
+  const gap = 0.3, w = (W - 2 * MX - gap) / 2, h = 1.95;
   MKT.takeaways.forEach(([ico, col, hd, d], i) => {
     const x = MX + (i % 2) * (w + gap), y = 1.95 + Math.floor(i / 2) * (h + gap), t0 = 300 + i * 180;
     const card = shape(s, pres.shapes.ROUNDED_RECTANGLE, { x, y, w, h, rectRadius: CARD_R, fill: { color: HEX.card }, line: { color: "FFFFFF", transparency: 90, width: 0.75 } });
-    const circ = shape(s, pres.shapes.OVAL, { x: x + 0.35, y: y + 0.42, w: 0.95, h: 0.95, fill: { color: HEX.card2 } });
-    const ii = img(s, state.ic(ico, col), { x: x + 0.59, y: y + 0.66, w: 0.47, h: 0.47 });
+    const circ = shape(s, pres.shapes.OVAL, { x: x + 0.35, y: y + 0.47, w: 0.95, h: 0.95, fill: { color: HEX.card2 } });
+    const ii = img(s, state.ic(ico, col), { x: x + 0.59, y: y + 0.71, w: 0.47, h: 0.47 });
     const hh = text(s, hd, { x: x + 1.6, y: y + 0.32, w: w - 1.9, h: 0.5, fontSize: 23, bold: true });
     const dd = text(s, d, { x: x + 1.6, y: y + 0.85, w: w - 1.9, h: 0.85, fontSize: 16, color: C.text2 });
     m.scale(card, t0, 900, 0.96); [circ, ii].forEach((o) => m.scale(o, t0 + 80, 800, 0.8)); m.rise(hh, t0 + 150); m.rise(dd, t0 + 250);
   });
   const fwd = text(s, [{ text: "Next: ", options: { bold: true, color: C.accent1 } }, { text: MKT.next, options: { color: C.text2 } }],
-    { x: MX, y: 6.27, w: 11.0, h: 0.36, fontSize: 16 });
+    { x: MX, y: 6.33, w: 11.0, h: 0.36, fontSize: 16 });
   m.fade(fwd, 1300, 900);
   homeButton(s, state.IDX.contents);
   s.addNotes(MKT.notes_takeaways);
@@ -544,13 +547,17 @@ def("takeaways", "Content", (s) => {
 def("refs", "Content", (s) => {
   const { text, m, ambient, header, source, homeButton } = K;
   ambient(s, ["amber", 12.2, 7.1, 8], ["gold", 1.0, 0.5, 5]);
-  header(s, "05 — SOURCES", "Key sources");
+  header(s, "05 — CONCLUSION & SOURCES", "Key sources");
   const refs = [...MKT.refs_slide].sort((a, b) => a.localeCompare(b, "en")).map((r) => { const k = r.indexOf(". ("); return k > 0 ? [r.slice(0, k + 1) + " ", r.slice(k + 2)] : [r, ""]; });
   const half = Math.ceil(refs.length / 2), w = (W - 2 * MX - 0.5) / 2;
   [refs.slice(0, half), refs.slice(half)].forEach((col, j) => {
     const runs = [];
-    col.forEach(([a, b], k) => { runs.push({ text: a, options: { bold: true, color: C.text1 } });
-      runs.push({ text: b, options: { color: C.text2, breakLine: k < col.length - 1 } }); });
+    col.forEach(([a, b], k) => {
+      runs.push({ text: a, options: { bold: true, color: C.text1 } });
+      const parts = b.split("*");
+      parts.forEach((t, j) => { if (t) runs.push({ text: t, options: { color: C.text2, italic: j % 2 === 1 } }); });
+      runs[runs.length - 1].options.breakLine = k < col.length - 1;
+    });
     const t = text(s, runs, { x: MX + j * (w + 0.5), y: 1.95, w, h: 4.45, fontSize: 13, paraSpaceAfter: 6 });
     anim.hang(t, 182880); // 0.2" hanging indent, as in an APA reference list
     m.rise(t, 300 + j * 200, 900, 0.015);
@@ -572,9 +579,9 @@ def("thanks", "Title", (s) => {
     { text: "EGCH2230 · Petroleum and Petrochemical Processing", options: { fontSize: 16, color: C.text2, breakLine: true } },
     { text: "University of Technology and Applied Sciences · Salalah", options: { fontSize: 16, color: C.text2 } },
   ], { x: MX, y: 4.85, w: 7.4, h: 1.3, paraSpaceAfter: 4 });
-  const [pb, pt] = button(s, "Back to contents", MX, 6.15, 2.6, 0.5, state.IDX.contents);
+  const [pb, pt] = button(s, "Back to contents", MX, 6.15, 2.6, 0.5, state.IDX.contents, { name: "thanks_back", line: HEX.line, icon: ["TbArrowLeft", HEX.text, "left"] });
   m.drift("!!drop", 0, 3800, 0, -0.014);
-  m.rise(b, 600, 900); m.rise(c, 900, 900); m.fade(pb, 1300, 700); m.fade(pt, 1300, 700);
+  m.rise(b, 600, 900); m.rise(c, 900, 900); m.fade(pb, 1300, 700); m.fade(pt, 1300, 700); m.fade("thanks_back_ic", 1300, 700);
   s.addNotes("Thank you. I am happy to take questions; the contents slide links to every chapter, and the map slide links to a zoomed view of each producing region.");
 });
 

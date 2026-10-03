@@ -13,6 +13,13 @@ const typoRuns = (str) => (typeof str === "string" ? typo(str) : str.map((r) => 
 // speaker notes: also en dashes in numeric ranges (2011-2013 -> 2011–2013)
 const typoNotes = (t) => typo(t).replace(/(\d)-(\d)/g, "$1\u2013$2");
 
+// Arial Bold advance widths (1/1000 em) for centring icon + label pairs
+const AB = Object.assign({}, ...[..."abcdeghknopqsuvxy"].map((c) => ({ [c]: "bdghnopqu".includes(c) ? 611 : 556 })),
+  { f: 333, i: 278, j: 278, l: 278, m: 889, r: 389, t: 333, w: 778, z: 500, " ": 278, "&": 722, "-": 333, "·": 278 },
+  ...[..."ABCDHKNRUX"].map((c) => ({ [c]: "X".includes(c) ? 667 : 722 })),
+  { E: 667, F: 611, G: 778, I: 278, J: 556, L: 611, M: 833, O: 778, P: 667, Q: 778, S: 667, T: 611, V: 667, W: 944, Y: 667, Z: 611 });
+const boldWidth = (t, pt) => [...t].reduce((a, c) => a + (AB[c] || 600), 0) / 1000 * pt / 72;
+
 function createKit(state) {
   const { pres, C, anim } = state;
   let SID = "", N = 0;
@@ -78,17 +85,19 @@ function createKit(state) {
     let tx;
     if (o.icon) {
       const [ico, col, side] = o.icon, is = h * 0.5, gap = 0.08;
-      const tw = label.length * fs * 0.6 / 72;            // approximate label width (bold Arial)
+      const tw = boldWidth(label, fs);
       const x0 = x + (w - (tw + gap + is)) / 2;
       const ix = side === "left" ? x0 : x0 + tw + gap, lx = side === "left" ? x0 + is + gap : x0;
       kit.img(s, state.ic(ico, col), { x: ix, y: y + (h - is) / 2, w: is, h: is, name: o.name ? o.name + "_ic" : undefined });
-      tx = kit.text(s, label, { x: lx - 0.05, y, w: tw + 0.1, h, fontSize: fs, bold: true, align: "center", valign: "middle",
-        color: o.color || C.text1, name: o.name ? o.name + "_tx" : undefined });
+      // the label hugs the icon, so the gap is exact even though the label width above is only estimated
+      const geom = side === "left" ? { x: lx, y, w: tw + 0.2, h, align: "left" } : { x: lx - 0.2, y, w: tw + 0.2, h, align: "right" };
+      tx = kit.text(s, label, Object.assign(geom, { fontSize: fs, bold: true, valign: "middle", color: o.color || C.text1,
+        name: o.name ? o.name + "_tx" : undefined }));
     } else {
       tx = kit.text(s, label, { x, y, w, h, fontSize: fs, bold: true, align: "center", valign: "middle",
         color: o.color || C.text1, name: o.name ? o.name + "_tx" : undefined });
     }
-    kit.shape(s, pres.shapes.ROUNDED_RECTANGLE, { x, y, w, h, rectRadius: h / 2, fill: { color: "000000", transparency: 100 },
+    if (target != null) kit.shape(s, pres.shapes.ROUNDED_RECTANGLE, { x, y, w, h, rectRadius: h / 2, fill: { color: "000000", transparency: 100 },
       hyperlink: { slide: target, tooltip: o.tooltip || label }, name: o.name ? o.name + "_hit" : undefined });
     return [bg, tx];
   };
